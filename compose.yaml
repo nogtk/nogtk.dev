@@ -4,6 +4,7 @@ services:
     working_dir: /home/app
     ports:
       - "3000:3000"
+      - "9005:9005" # For Firebase
     volumes:
       - .:/home/app
     tty: true
