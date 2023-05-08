@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import Post from '../interfaces/post'
+import BlogTitle from '../components/blog-title'
 
 type Props = {
   allPosts: Post[]
@@ -17,6 +18,7 @@ export default function Index({ allPosts }: Props) {
           <title>{'nogtk.dev'}</title>
         </Head>
         <Container>
+          <BlogTitle />
           <Posts posts={allPosts} />
         </Container>
       </Layout>

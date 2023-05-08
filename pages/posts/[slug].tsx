@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
@@ -11,6 +10,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
+import BlogTitle from '../../components/blog-title'
 
 type Props = {
   post: PostType
@@ -26,7 +26,7 @@ export default function Post({ post, morePosts}: Props) {
   return (
     <Layout>
       <Container>
-        <Header />
+        <BlogTitle />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
