@@ -35,6 +35,7 @@ export default function Post({ post, morePosts}: Props) {
                 <title>{title}</title>
                 <meta property="og:image" content={`https://res.cloudinary.com/di1lterwq/image/upload/l_text:TakaoPGothic_70:${title},co_rgb:000,w_900,c_fit/v1684028422/ogp_sample3_e9gwlv.png`} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta name="og:title" content="nogtk.dev" />
               </Head>
               <PostHeader
                 title={post.title}
