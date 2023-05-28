@@ -13,10 +13,9 @@ import BlogTitle from '../../components/blog-title'
 
 type Props = {
   post: PostType
-  morePosts: PostType[]
 }
 
-export default function Post({ post, morePosts}: Props) {
+export default function Post({ post }: Props) {
   const router = useRouter()
   const title = post.title
   if (!router.isFallback && !post?.slug) {
