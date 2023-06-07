@@ -1,7 +1,6 @@
 services:
   app:
     build: .
-    working_dir: /home/app
     ports:
       - "3000:3000"
       - "9005:9005" # For Firebase
@@ -9,4 +8,4 @@ services:
       - .:/home/app
     tty: true
     stdin_open: true
-    command: yarn dev
+    command: /bin/bash -c "yarn install && yarn dev"
