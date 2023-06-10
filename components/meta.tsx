@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
 
 const Meta = () => {
   return (
@@ -21,7 +20,7 @@ const Meta = () => {
       />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content={"nogtk.dev"}
       />
     </Head>
   )
