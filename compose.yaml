@@ -5,7 +5,7 @@ services:
       - "3000:3000"
       - "9005:9005" # For Firebase
     volumes:
-      - .:/home/app
+      - .:/home/workspace
     tty: true
     stdin_open: true
     command: /bin/bash -c "yarn install && yarn dev"
