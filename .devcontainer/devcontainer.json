@@ -1,0 +1,7 @@
+{
+  "name": "nogtk.dev",
+  "dockerComposeFile": ["../compose.yml"],
+  "containerUser": "app",
+  "service": "app",
+  "workspaceFolder": "/home/workspace"
+}
