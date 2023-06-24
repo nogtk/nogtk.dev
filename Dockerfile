@@ -15,7 +15,5 @@ USER $USER_GID:$USER_UID
 
 WORKDIR /home/workspace
 
-RUN yarn global add firebase-tools
-
 COPY --chown=app:app ./package*.json ./
 COPY --chown=app:app . .
