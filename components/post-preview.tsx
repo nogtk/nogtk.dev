@@ -16,7 +16,7 @@ const PostPreview = ({
 }: Props) => {
   return (
     <div className="flex flex-col items-center border-b-4">
-      <h3 className="text-3xl leading-snug justify-center mb-2">
+      <h3 className="text-3xl leading-snug justify-center mb-2 mt-4">
         <Link
           as={`/posts/${slug}`}
           href="/posts/[slug]"
