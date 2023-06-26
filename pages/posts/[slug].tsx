@@ -7,9 +7,10 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import markdownToHtml from '../../lib/markdownToHtml'
+import markdownHtml from '../../lib/markdownHtml'
 import type PostType from '../../interfaces/post'
 import BlogTitle from '../../components/blog-title'
+import Script from 'next/script'
 
 type Props = {
   post: PostType
@@ -36,6 +37,7 @@ export default function Post({ post }: Props) {
                 <meta property="og:image" content={`https://res.cloudinary.com/di1lterwq/image/upload/l_text:TakaoPGothic_70:${title},co_rgb:000,w_900,c_fit/v1684028422/ogp_sample3_e9gwlv.png`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="og:title" content="nogtk.dev" />
+                <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
               </Head>
               <PostHeader
                 title={post.title}
@@ -64,7 +66,7 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
   ])
-  const content = await markdownToHtml(post.content || '')
+  const content = markdownHtml(post.content || '')
 
   return {
     props: {
