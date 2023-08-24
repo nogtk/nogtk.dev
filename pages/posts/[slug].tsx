@@ -11,6 +11,7 @@ import markdownHtml from '../../lib/markdownHtml'
 import type PostType from '../../interfaces/post'
 import BlogTitle from '../../components/blog-title'
 import Script from 'next/script'
+import { NextSeo } from 'next-seo'
 
 type Props = {
   post: PostType
@@ -30,13 +31,28 @@ export default function Post({ post }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
+            <NextSeo
+              title = {title}
+              description = {post.excerpt}
+              openGraph = {{
+                title: title,
+                description: post.excerpt,
+                url: `https://nogtk.dev/posts/${post.slug}`,
+                type: 'article',
+                article: {
+                  publishedTime: post.date,
+                  authors: ['https://twitter.com/_nogtk_']
+                },
+                images: [
+                  {
+                    url: `https://res.cloudinary.com/di1lterwq/image/upload/l_text:TakaoPGothic_70:${title},co_rgb:000,w_900,c_fit/v1684028422/ogp_sample3_e9gwlv.png`
+                  }
+                ]
+              }}
+            />
             <article className="mb-32">
               <Head>
                 <title>{title}</title>
-                /* TODO: Refactor as Component (try to next-seo) */
-                <meta property="og:image" content={`https://res.cloudinary.com/di1lterwq/image/upload/l_text:TakaoPGothic_70:${title},co_rgb:000,w_900,c_fit/v1684028422/ogp_sample3_e9gwlv.png`} />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="og:title" content="nogtk.dev" />
                 <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
               </Head>
               <PostHeader
