@@ -97,13 +97,12 @@
     "@types/node" ">=12.12.47"
 
 "@grpc/proto-loader@^0.7.0":
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.7.8.tgz#c050bbeae5f000a1919507f195a1b094e218036e"
-  integrity sha512-GU12e2c8dmdXb7XUlOgYWZ2o2i+z9/VeACkxTA/zzAe2IjclC5PnVL0lpgjhrqfpDYHzM8B1TF6pqWegMYAzlA==
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.7.9.tgz#3ca68236f1a0d77566dafa53c715eb31d096279a"
+  integrity sha512-YJsOehVXzgurc+lLAxYnlSMc1p/Gu6VAvnfx0ATi2nzvr0YZcjhmZDeY8SeAKv1M7zE3aEJH0Xo9mK1iZ8GYoQ==
   dependencies:
-    "@types/long" "^4.0.1"
     lodash.camelcase "^4.3.0"
-    long "^4.0.0"
+    long "^5.0.0"
     protobufjs "^7.2.4"
     yargs "^17.7.2"
 
@@ -391,7 +390,7 @@
   resolved "https://registry.yarnpkg.com/@types/linkify-it/-/linkify-it-3.0.2.tgz#fd2cd2edbaa7eaac7e7f3c1748b52a19143846c9"
   integrity sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==
 
-"@types/long@^4.0.0", "@types/long@^4.0.1":
+"@types/long@^4.0.0":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
   integrity sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==
@@ -427,9 +426,9 @@
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
 "@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  version "20.5.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.3.tgz#fa52c147f405d56b2f1dd8780d840aa87ddff629"
-  integrity sha512-ITI7rbWczR8a/S6qjAW7DMqxqFMjjTo61qZVWJ1ubPvbIQsL5D/TvwjYEalM8Kthpe3hTzOGrF2TGbAu2uyqeA==
+  version "20.5.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.4.tgz#4666fb40f9974d60c53c4ff554315860ba4feab8"
+  integrity sha512-Y9vbIAoM31djQZrPYjpTLo0XlaSwOIsrlfE3LpulZeRblttsLQRFRlBAppW0LOxyT3ALj2M5vU1ucQQayQH3jA==
 
 "@types/node@^18.0.3":
   version "18.17.9"
@@ -2025,9 +2024,9 @@ finalhandler@1.2.0:
     unpipe "~1.0.0"
 
 firebase-tools@^12.4.0:
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-12.5.0.tgz#815e654d5a059bc31f2a9f1590d6d4fa154a6b68"
-  integrity sha512-0d5zshEope0aZU0/NzYQuhMuoH9Mq3sOEjnGH9BMNojvVrzkLIYbZNJBZUoYF4o1Qh3/+l5cW2lMCfHPK8Bc4w==
+  version "12.5.1"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-12.5.1.tgz#2d109c87cacb31d799de2a1a37f3a81b13101dbf"
+  integrity sha512-TjerH4RBG+e6KrfNNtjNWbtdqvw6mpSvM1ruUYB8izh1+J22k5CmQvXcCE0azM43UT6l/dn8eq8hWLG6C8fXww==
   dependencies:
     "@google-cloud/pubsub" "^3.0.1"
     abort-controller "^3.0.0"
@@ -3293,11 +3292,6 @@ logform@^2.3.2, logform@^2.4.0:
     safe-stable-stringify "^2.3.1"
     triple-beam "^1.3.0"
 
-long@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
-  integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
-
 long@^5.0.0:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/long/-/long-5.2.3.tgz#a3ba97f3877cf1d778eccbcb048525ebb77499e1"
@@ -3967,9 +3961,9 @@ node-emoji@^1.11.0:
     lodash "^4.17.21"
 
 node-fetch@^2.6.1, node-fetch@^2.6.7, node-fetch@^2.6.9:
-  version "2.6.13"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.13.tgz#a20acbbec73c2e09f9007de5cda17104122e0010"
-  integrity sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
+  integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
   dependencies:
     whatwg-url "^5.0.0"
 
@@ -4567,9 +4561,9 @@ rc@^1.2.8:
     strip-json-comments "~2.0.1"
 
 re2@^1.17.7:
-  version "1.20.1"
-  resolved "https://registry.yarnpkg.com/re2/-/re2-1.20.1.tgz#27450f6de6299635f50305a670cc15ac30687f85"
-  integrity sha512-JbzIoI5adNCqGUK8wHG1dMSyggvPyA4kx2hewt1lma5sP7/iWCfM15XKbCZlX2yvu5k80jSKAOQqJF7KC+2n8Q==
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/re2/-/re2-1.20.3.tgz#7370b05f0a534873a9054fe7704be2f10bfc4c90"
+  integrity sha512-g5j4YjygwGEccP9SCuDI90uPlgALLEYLotfL0K+kqL3XKB4ht7Nm1JuXfOTG96c7JozpvCUxTz1T7oTNwwMI6w==
   dependencies:
     install-artifact-from-github "^1.3.3"
     nan "^2.17.0"
