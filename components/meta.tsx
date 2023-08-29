@@ -18,10 +18,6 @@ const Meta = () => {
         type="image/png"
         href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f455.png"
       />
-      <meta
-        name="description"
-        content={"nogtk.dev"}
-      />
     </Head>
   )
 }
