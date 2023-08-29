@@ -52,7 +52,6 @@ export default function Post({ post }: Props) {
             />
             <article className="mb-32">
               <Head>
-                <title>{title}</title>
                 <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
               </Head>
               <PostHeader

@@ -28,8 +28,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           siteName: 'nogtk.dev',
           images: [
             {
-              url: 'https://res.cloudinary.com/di1lterwq/image/upload/v1692798736/Frame_1_pt3mzq.png',
-              alt: 'ogp image for top page'
+              url: 'https://res.cloudinary.com/di1lterwq/image/upload/v1692798736/Frame_1_pt3mzq.png'
             }
           ]
         }}
