@@ -1,4 +1,3 @@
-import DateFormatter from "./date-formatter";
 import Link from "next/link";
 
 type Props = {
