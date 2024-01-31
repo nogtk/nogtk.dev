@@ -1,40 +1,33 @@
-import Container from '../components/container'
-import Posts from '../components/posts'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import Post from '../interfaces/post'
-import BlogTitle from '../components/blog-title'
+import Container from "../components/container";
+import Layout from "../components/layout";
+import { getAllPosts } from "../lib/api";
+import Head from "next/head";
+import Post from "../interfaces/post";
+import BlogTopPage from "../components/blog-top-page";
 
 type Props = {
-  allPosts: Post[]
-}
+  allPosts: Post[];
+};
 
 export default function Index({ allPosts }: Props) {
   return (
     <>
       <Layout>
         <Head>
-          <title>{'nogtk.dev'}</title>
+          <title>{"nogtk.dev"}</title>
         </Head>
         <Container>
-          <BlogTitle />
-          <Posts posts={allPosts} />
+          <BlogTopPage posts={allPosts} />;
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'excerpt',
-  ])
+  const allPosts = getAllPosts(["title", "date", "slug", "excerpt"]);
 
   return {
     props: { allPosts },
-  }
-}
+  };
+};
