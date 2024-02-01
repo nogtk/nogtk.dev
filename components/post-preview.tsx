@@ -1,36 +1,34 @@
-import DateFormatter from './date-formatter'
-import Link from 'next/link'
+import Link from "next/link";
 
 type Props = {
-  title: string
-  date: string
-  excerpt: string
-  slug: string
-}
+  title: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+};
 
-const PostPreview = ({
-  title,
-  date,
-  excerpt,
-  slug,
-}: Props) => {
+const PostPreview = ({ title, date, excerpt, slug }: Props) => {
   return (
-    <div className="flex flex-col items-center border-b-4">
-      <h3 className="text-3xl leading-snug justify-center mb-2 mt-4">
+    <>
+      <div className="bg-white overflow-hidden shadow rounded-lg">
         <Link
           as={`/posts/${slug}`}
           href="/posts/[slug]"
-          className="hover:underline text-blue-600"
+          className="hover:underline:none"
         >
-          {title}
+          <div className="p-5">
+            <h3 className="text-xl leading-6 font-bold text-gray-900">
+              {title}
+            </h3>
+            <p className="mt-2 text-sm text-gray-500">{excerpt}</p>
+            <div className="mt-3">
+              <span className="text-sm text-gray-500">{date}</span>
+            </div>
+          </div>
         </Link>
-      </h3>
-      <div className="text-md">
-        <DateFormatter dateString={date} />
       </div>
-      <p className="text-md leading-relaxed mb-4">{excerpt}</p>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default PostPreview
+export default PostPreview;

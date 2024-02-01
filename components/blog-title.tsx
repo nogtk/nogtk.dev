@@ -1,17 +1,15 @@
-import Link from 'next/link'
-import BlogTitleLinks from './blog-title-links'
+import Link from "next/link";
 
 const BlogTitle = () => {
   return (
-    <div className="w-max m-auto mb-8">
-      <h2 className="text-3xl mt-8 mb-4 font-bold flex justify-center">
-        <Link href="/" className="hover:underline">
-          nogtk.dev 👕
-        </Link>
-      </h2>
-      <BlogTitleLinks />
-    </div>
-  )
-}
+    <header className="bg-gradient-to-r from-blue-500 to-blue-700 shadow">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-extrabold text-white dark:text-gray-100 text-center">
+          <Link href="/">nogtk.dev</Link>
+        </h1>
+      </div>
+    </header>
+  );
+};
 
-export default BlogTitle
+export default BlogTitle;
