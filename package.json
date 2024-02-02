@@ -2,13 +2,13 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build && next-sitemap --config next-sitemap.config.js && next export",
+    "build": "next build && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "typecheck": "tsc"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "^13.4.4",
+    "next": "^14.0.0",
     "next-seo": "^6.1.0",
     "next-sitemap": "^4.2.2",
     "react": "^18.2.0",
