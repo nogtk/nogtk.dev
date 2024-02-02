@@ -20,7 +20,7 @@
     "typescript": "^5.1.3",
     "zenn-content-css": "0.1.144",
     "zenn-embed-elements": "0.1.144",
-    "zenn-markdown-html": "0.1.144"
+    "zenn-markdown-html": "0.1.152"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
