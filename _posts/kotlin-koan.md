@@ -1,6 +1,6 @@
 ---
 title: "kotlin koanをやった"
-excerpt: ""
+excerpt: "Kotlin のキャッチアップを兼ねて、Kotlin Koan をやってみました。簡単な始め方とやりながらのメモを残しておきます。"
 date: "2024-02-04"
 ---
 
