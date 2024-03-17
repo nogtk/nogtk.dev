@@ -5,5 +5,4 @@ module.exports = {
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ["/404"],
-  outDir: './public'
 };
