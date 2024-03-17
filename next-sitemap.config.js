@@ -2,5 +2,8 @@
 
 module.exports = {
   siteUrl: 'https://nogtk.dev',
-  generateRobotsTxt: false
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
+  exclude: ["/404"],
+  outDir: './public'
 };
