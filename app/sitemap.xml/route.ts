@@ -4,7 +4,7 @@
 import { getAllPosts } from "../../lib/api";
 
 function getSitemap() {
-  const baseURL = "nogtk.dev";
+  const baseURL = "https://nogtk.dev";
 
   const staticPaths = [
     {
