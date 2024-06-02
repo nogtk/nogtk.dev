@@ -16,7 +16,7 @@ function getSitemap() {
   const posts = getAllPosts(["slug", "date"]);
   const dynamicPaths = posts.map((post) => {
     return {
-      url: `${baseURL}/posts/${post.slug}`,
+      url: `${baseURL}/posts/${post.slug}/`,
       lastModified: new Date(post.date),
     };
   });
