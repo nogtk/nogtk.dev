@@ -32,7 +32,7 @@ export default function Post({ post }: Props) {
           <>
             <NextSeo
               title={title}
-              description={post.excerpt || "blog post"}
+              description={post.excerpt}
               openGraph={{
                 title: title,
                 url: `https://nogtk.dev/posts/${post.slug}`,
