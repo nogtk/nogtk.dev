@@ -11,6 +11,7 @@ import type PostType from "../../interfaces/post";
 import BlogTitle from "../../components/blog-title";
 import Script from "next/script";
 import { NextSeo } from "next-seo";
+import { TableOfContents } from "../../components/toc";
 
 type Props = {
   post: PostType;
@@ -48,16 +49,23 @@ export default function Post({ post }: Props) {
                 ],
               }}
             />
-            <article className="mb-32">
-              <Head>
-                <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
-              </Head>
-              <PostBody
-                title={post.title}
-                date={post.date}
-                content={post.content}
-              />
-            </article>
+            <div className="flex justify-center mx-32">
+              <article className="flex-grow mb-32">
+                <Head>
+                  <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
+                </Head>
+                <PostBody
+                  title={post.title}
+                  date={post.date}
+                  content={post.content}
+                />
+              </article>
+              <aside className="w-1/4">
+                <div className="sticky top-12 mt-12">
+                  <TableOfContents />
+                </div>
+              </aside>
+            </div>
           </>
         )}
       </Container>

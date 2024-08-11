@@ -1,4 +1,5 @@
 import markdownStyles from "./markdown-styles.module.css";
+import { TableOfContents } from "./toc";
 
 type Props = {
   title: string;
@@ -9,7 +10,7 @@ type Props = {
 const PostBody = ({ title, date, content }: Props) => {
   return (
     <main>
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="max-w-2xl lg:max-w-4xl mx-auto py-6 sm:px-6 lg:px-10">
         <div className="px-4 py-6 sm:px-0">
           <div className="rounded-lg bg-white shadow-lg overflow-hidden">
             <div className="p-4 sm:p-6 lg:p-8">
@@ -24,7 +25,7 @@ const PostBody = ({ title, date, content }: Props) => {
                         {date}
                       </span>
                     </div>
-                    <div className="znc">
+                    <div className="znc markdown-body">
                       <div
                         className={markdownStyles["markdown"]}
                         dangerouslySetInnerHTML={{ __html: content }}
@@ -38,12 +39,6 @@ const PostBody = ({ title, date, content }: Props) => {
         </div>
       </div>
     </main>
-    // <div className="mx-auto znc">
-    //   <div
-    //     className={markdownStyles['markdown']}
-    //     dangerouslySetInnerHTML={{ __html: content }}
-    //   />
-    // </div>
   );
 };
 
