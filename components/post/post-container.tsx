@@ -13,13 +13,13 @@ const PostContainer = ({ post }: Props) => {
   return (
     <>
       <article className="flex-grow mb-32">
-        <div className="flex justify-center mx-32">
+        <div className="flex flex-col xl:flex-row justify-center lg:mx-32">
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
           </Head>
-          <main>
+          <main className="order-2 lg:order-1">
             {/* 1024px の時は max-w-xl がちょうどいいが、今はそれを無視しておく */}
-            <div className="max-w-2xl mx-auto py-6 sm:px-6 lg:px-10">
+            <div className="w-full lg:max-w-4xl mx-auto py-6 sm:px-6 lg:px-10">
               <div className="px-4 py-6 sm:px-0">
                 <div className="rounded-lg bg-white shadow-lg overflow-hidden">
                   <div className="p-4 sm:p-6 lg:p-8">
@@ -39,8 +39,8 @@ const PostContainer = ({ post }: Props) => {
               </div>
             </div>
           </main>
-          <aside className="w-full lg:w-1/3">
-            <div className="sticky top-12 mt-12">
+          <aside className="w-full lg:w-1/3 order-1 lg:order-2">
+            <div className="sticky top-12 mt-12 lg:mt-0 mx-4 lg:mx-0 xl:mt-12">
               <TableOfContents />
             </div>
           </aside>
