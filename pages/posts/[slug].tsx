@@ -1,17 +1,18 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
-import PostBody from "../../components/post-body";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-title";
+import PostTitle from "../../components/post/post-fallback";
 import Head from "next/head";
 import markdownHtml from "../../lib/markdownHtml";
 import type PostType from "../../interfaces/post";
 import BlogTitle from "../../components/blog-title";
 import Script from "next/script";
 import { NextSeo } from "next-seo";
-import { TableOfContents } from "../../components/toc";
+import { TableOfContents } from "../../components/post/toc";
+import PostFallback from "../../components/post/post-fallback";
+import PostContainer from "../../components/post/post-container";
 
 type Props = {
   post: PostType;
@@ -28,7 +29,7 @@ export default function Post({ post }: Props) {
       <Container>
         <BlogTitle />
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <PostFallback>Loading…</PostFallback>
         ) : (
           <>
             <NextSeo
@@ -49,23 +50,7 @@ export default function Post({ post }: Props) {
                 ],
               }}
             />
-            <div className="flex justify-center mx-32">
-              <article className="flex-grow mb-32">
-                <Head>
-                  <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
-                </Head>
-                <PostBody
-                  title={post.title}
-                  date={post.date}
-                  content={post.content}
-                />
-              </article>
-              <aside className="w-1/4">
-                <div className="sticky top-12 mt-12">
-                  <TableOfContents />
-                </div>
-              </aside>
-            </div>
+            <PostContainer post={post} />
           </>
         )}
       </Container>
