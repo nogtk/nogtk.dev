@@ -5003,10 +5003,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zenn-content-css@0.1.154:
-  version "0.1.154"
-  resolved "https://registry.npmjs.org/zenn-content-css/-/zenn-content-css-0.1.154.tgz"
-  integrity sha512-tYHV4OMftCDJZjY28Ajb0kjZwA23cr1uOHLorgAOtO6SP2NWlNn1Liz4vICBEAhFgVwjxI2chkPxVukS13Kk0w==
+zenn-content-css@0.1.155:
+  version "0.1.155"
+  resolved "https://registry.npmjs.org/zenn-content-css/-/zenn-content-css-0.1.155.tgz"
+  integrity sha512-YR22ASOK/R86zPBr7fGSmuAO4urPSaAIzo0n1ZXt9MTsv5XRQuXMKWoqgvpTxE+kTrMnAREORH6IBKoy9ZOgUQ==
 
 zenn-embed-elements@0.1.154:
   version "0.1.154"
