@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toc li {
+    list-style-type: none;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.toc li::before {
+    content: ''; /* 空の内容を指定 */
+    position: absolute;
+    left: 0;
+    top: 12px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 2px solid blue;
+    border-radius: 50%; /* 丸形にする */
+    background-color: transparent;
+}
+
+.toc a {
+text-decoration: none;
+transition: color 0.3s ease;
+opacity: 0.5;
+}
+
+.toc a:hover {
+opacity: 1;
+}
+
+.toc a.is-active-link {
+font-weight: bold;
+opacity: 1;
+}
+
+.toc li.is-active-li::before {
+    background-color: blue; /* 青色で埋めた丸 */
+    border: none; /* 枠線を削除 */
+}
