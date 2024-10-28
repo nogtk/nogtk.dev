@@ -5052,10 +5052,10 @@ zenn-content-css@0.1.158:
   resolved "https://registry.npmjs.org/zenn-content-css/-/zenn-content-css-0.1.158.tgz"
   integrity sha512-10ZPz84va6TSTUvuOI3D8Y+sc+6SJqcdnBg+i9TH8uDrYtwNy5CbW+ctNq3oAQ2R9bou/ZEb5CtFtCwf41/yzw==
 
-zenn-embed-elements@0.1.157:
-  version "0.1.157"
-  resolved "https://registry.npmjs.org/zenn-embed-elements/-/zenn-embed-elements-0.1.157.tgz"
-  integrity sha512-oTv4mimgUVr1BiKJrA6d076IP9fgycB5eC2UmGaJif1B0YSkJN9hEmP8p2UzdxV2xwyCJpsEahhIe+am8rdsTg==
+zenn-embed-elements@0.1.158:
+  version "0.1.158"
+  resolved "https://registry.npmjs.org/zenn-embed-elements/-/zenn-embed-elements-0.1.158.tgz"
+  integrity sha512-g4tyRjV+v8j1Eq79IpE5//kcGCbM++QkXzayMdnVHsGoBVLH/PLS5cgnWmVq249hh99pCzSjAjbrg2Bwm8Iu1w==
 
 zenn-markdown-html@0.1.157:
   version "0.1.157"
