@@ -3586,10 +3586,10 @@ pgpass@1.x:
   dependencies:
     split2 "^4.1.0"
 
-picocolors@^1.0.0, picocolors@^1.0.1, picocolors@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.1.0.tgz"
-  integrity sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==
+picocolors@^1.0.0, picocolors@^1.0.1, picocolors@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz"
+  integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
 
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   version "2.3.1"
@@ -3668,13 +3668,13 @@ postcss@8.4.31:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.3.11, postcss@^8.4.14, postcss@^8.4.23:
-  version "8.4.47"
-  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.47.tgz"
-  integrity sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==
+postcss@^8.3.11, postcss@^8.4.23, postcss@^8.4.48:
+  version "8.4.48"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.48.tgz"
+  integrity sha512-GCRK8F6+Dl7xYniR5a4FYbpBzU8XnZVeowqsQFYdcXuSbChgiks7qybSkbvnaeqv0G0B+dd9/jJgH8kkLDQeEA==
   dependencies:
     nanoid "^3.3.7"
-    picocolors "^1.1.0"
+    picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
 postgres-array@~2.0.0:
@@ -4642,9 +4642,9 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-tocbot@^4.32.2:
+tocbot@^4.29.0:
   version "4.32.2"
-  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.32.2.tgz#24d178e5f13b8fea7aeb5393522b67d718e5083c"
+  resolved "https://registry.npmjs.org/tocbot/-/tocbot-4.32.2.tgz"
   integrity sha512-UbVZNXX79LUqMzsnSTwE/YF/PYc2pg3G77D/jcolHd6lmw+oklzfcLtHSsmWBhOf1wfWD1HfYzdjGQef1VcQgg==
 
 toidentifier@1.0.1:
