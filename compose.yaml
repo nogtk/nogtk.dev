@@ -8,4 +8,5 @@ services:
       - .:/home/workspace
     tty: true
     stdin_open: true
-    command: /bin/bash -c "yarn install && yarn dev"
+    command: >
+      sh -c "echo 'Y' | yarn && yarn dev"
