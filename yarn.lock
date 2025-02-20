@@ -42,9 +42,9 @@
   integrity sha512-qEpKRT2oUaWDH6tjRxLHjdzMqRUGYDnGZlKrnL4dJ77JVMcP2Hpo3NYnOSPKdZdeec57B6QPprCUFg0picx5Pw==
 
 "@google-cloud/cloud-sql-connector@^1.3.3":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/cloud-sql-connector/-/cloud-sql-connector-1.6.0.tgz#3ab3d4a4ce18077cd2cae118cfdf7cffaa7c51d6"
-  integrity sha512-YkgPaxHbWRjp8YS7OCZAGge4qwX/pwFKT/cxKxV5PYyeS4CbaY6URF2f5Lo6Pabn6bs2AxwjB/SA9UeCdLbj7A==
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@google-cloud/cloud-sql-connector/-/cloud-sql-connector-1.6.1.tgz#18914aeb312a9146498c66066b296a89aa177080"
+  integrity sha512-ey8t8JV8PJ27e28GItKBcFZmZbBdRMk2qsEo3POvZQDw3H4fA/dO9893v51dxeuHtnuEan1v/WB44dHEesLWmw==
   dependencies:
     "@googleapis/sqladmin" "^24.0.0"
     gaxios "^6.1.1"
@@ -1103,7 +1103,7 @@ colorspace@1.1.x:
     color "^3.1.3"
     text-hex "1.0.x"
 
-combined-stream@^1.0.6, combined-stream@^1.0.8:
+combined-stream@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
   integrity sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
@@ -1567,6 +1567,16 @@ es-object-atoms@^1.0.0:
   dependencies:
     es-errors "^1.3.0"
 
+es-set-tostringtag@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz#f31dbbe0c183b00a6d26eb6325c810c0fd18bd4d"
+  integrity sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==
+  dependencies:
+    es-errors "^1.3.0"
+    get-intrinsic "^1.2.6"
+    has-tostringtag "^1.0.2"
+    hasown "^2.0.2"
+
 escalade@^3.1.1:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.2.0.tgz#011a3f69856ba189dffa7dc8fcce99d2a87903e5"
@@ -1819,9 +1829,9 @@ finalhandler@1.3.1:
     unpipe "~1.0.0"
 
 firebase-tools@^13.0.0:
-  version "13.31.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.31.1.tgz#5bfabb3ea0417c61a23059e058d93a595d240bf2"
-  integrity sha512-CzQsIwa7sh/0/bNhmg0lYxf4xltMA8nRX665ATpFSuzSyb3j7m5iQjI1og/gjBSTgGfXU7e/ULWkr8wDdbFqoQ==
+  version "13.31.2"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.31.2.tgz#9c31f35b493d2475c3238acea87cb52909400614"
+  integrity sha512-y88vAQ8L2Bm5kkYKUyiXmUlvOs/kikE7pbVgEsoX/0CiwFqqoN8+TAi7ZwsOkB/dRlNlR4WztAa7Od6LQ0GhuQ==
   dependencies:
     "@electric-sql/pglite" "^0.2.16"
     "@google-cloud/cloud-sql-connector" "^1.3.3"
@@ -1906,22 +1916,24 @@ foreground-child@^3.1.0:
     signal-exit "^4.0.1"
 
 form-data@^2.5.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.2.tgz#dc653743d1de2fcc340ceea38079daf6e9069fd2"
-  integrity sha512-GgwY0PS7DbXqajuGf4OYlsrIu3zgxD6Vvql43IBhm6MahqA5SK/7mwhtNj2AdH2z35YR34ujJ7BN+3fFC3jP5Q==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.6"
-    mime-types "^2.1.12"
-    safe-buffer "^5.2.1"
-
-form-data@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.1.tgz#ba1076daaaa5bfd7e99c1a6cb02aa0a5cff90d48"
-  integrity sha512-tzN8e4TX8+kkxGPK8D5u0FNmjPUjw3lwC9lSLxxoB/+GtsJG91CO8bSWy73APlgAZzZbXEYZJuxjkHH2w+Ezhw==
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.3.tgz#f9bcf87418ce748513c0c3494bb48ec270c97acc"
+  integrity sha512-XHIrMD0NpDrNM/Ckf7XJiBbLl57KEhT3+i3yY+eWm+cqYZJQTZrKo8Y8AWKnuV5GT4scfuUGt9LzNoIx3dU1nQ==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
+    es-set-tostringtag "^2.1.0"
+    mime-types "^2.1.35"
+    safe-buffer "^5.2.1"
+
+form-data@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.2.tgz#35cabbdd30c3ce73deb2c42d3c8d3ed9ca51794c"
+  integrity sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    es-set-tostringtag "^2.1.0"
     mime-types "^2.1.12"
 
 forwarded@0.2.0:
@@ -2172,10 +2184,17 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-has-symbols@^1.1.0:
+has-symbols@^1.0.3, has-symbols@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.1.0.tgz#fc9c6a783a084951d0b971fe1018de813707a338"
   integrity sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==
+
+has-tostringtag@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/has-tostringtag/-/has-tostringtag-1.0.2.tgz#2cdc42d40bef2e5b4eeab7c01a73c54ce7ab5abc"
+  integrity sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==
+  dependencies:
+    has-symbols "^1.0.3"
 
 has-yarn@^2.1.0:
   version "2.1.0"
@@ -2824,9 +2843,9 @@ logform@^2.7.0:
     triple-beam "^1.3.0"
 
 long@^5.0.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/long/-/long-5.3.0.tgz#3bab70330c40c2c1b5cb73c4254723c81f00e15c"
-  integrity sha512-5vvY5yF1zF/kXk+L94FRiTDa1Znom46UjPCH6/XbSvS8zBKMFBHTJk8KDMqJ+2J6QezQFi7k1k8v21ClJYHPaw==
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/long/-/long-5.3.1.tgz#9d4222d3213f38a5ec809674834e0f0ab21abe96"
+  integrity sha512-ka87Jz3gcx/I7Hal94xaN2tZEOPoUOEVftkQqZx2EeQRN7LGdfLlI3FvZ+7WDplm+vK2Urx9ULrvSowtdCieng==
 
 loose-envify@^1.1.0:
   version "1.4.0"
@@ -3400,9 +3419,9 @@ p-throttle@^7.0.0:
   integrity sha512-aio0v+S0QVkH1O+9x4dHtD4dgCExACcL+3EtNaGqC01GBudS9ijMuUsmN8OVScyV4OOp0jqdLShZFuSlbL/AsA==
 
 pac-proxy-agent@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/pac-proxy-agent/-/pac-proxy-agent-7.1.0.tgz#da7c3b5c4cccc6655aaafb701ae140fb23f15df2"
-  integrity sha512-Z5FnLVVZSnX7WjBg0mhDtydeRZ1xMcATZThjySQUHqr+0ksP8kqaw23fNKkaaN/Z8gwLUs/W7xdl0I75eP2Xyw==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/pac-proxy-agent/-/pac-proxy-agent-7.2.0.tgz#9cfaf33ff25da36f6147a20844230ec92c06e5df"
+  integrity sha512-TEB8ESquiLMc0lV8vcd5Ql/JAKAoyzHFXaStwjkzpOpC5Yv+pIzLfHvjTSdf3vpa2bMiUQrg9i6276yn8666aA==
   dependencies:
     "@tootallnate/quickjs-emscripten" "^0.23.0"
     agent-base "^7.1.2"
