@@ -1810,9 +1810,9 @@ finalhandler@1.3.1:
     unpipe "~1.0.0"
 
 firebase-tools@^13.0.0:
-  version "13.34.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.34.0.tgz#eea53c3d22c074e4da1382d9f282a942574a3c8b"
-  integrity sha512-1j3nJin7hgFu0mTWRejI1ZOS1JaXCe0TpgUNCyYrCX4yetdOCOxdFPbLJsgAc9TKaXkREYElj1X6G6UL+9Xfuw==
+  version "13.35.1"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.35.1.tgz#fb53464ba970e63ae2c7b63183784ea86e14b914"
+  integrity sha512-QmMy4hnd0Q+V+7GFhZUV80+kG0WC1+UOtuaaQWx+cstt+XepUcpju/KW4cBknnyql521BghfuAhveckQQ1g+HA==
   dependencies:
     "@electric-sql/pglite" "^0.2.16"
     "@google-cloud/cloud-sql-connector" "^1.3.3"
@@ -2018,11 +2018,6 @@ get-proto@^1.0.1:
   dependencies:
     dunder-proto "^1.0.1"
     es-object-atoms "^1.0.0"
-
-get-stdin@=8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-8.0.0.tgz#cbad6a73feb75f6eeb22ba9e01f89aa28aa97a53"
-  integrity sha512-sY22aA6xchAzprjyqmSEQv4UbAAzRN0L2dQB0NlN5acTTK9Don6nhoc3eAbUnpZiCANAMfd/+40kVdKfFygohg==
 
 get-uri@^6.0.1:
   version "6.0.4"
@@ -2981,9 +2976,9 @@ mime-db@1.52.0:
   integrity sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==
 
 "mime-db@>= 1.43.0 < 2":
-  version "1.53.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.53.0.tgz#3cb63cd820fc29896d9d4e8c32ab4fcd74ccb447"
-  integrity sha512-oHlN/w+3MQ3rba9rqFr6V/ypF10LSkdwUysQL7GkXoTgIWeV+tcXGA852TBxH+gsh8UWoyhR1hKcoMJTuWflpg==
+  version "1.54.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.54.0.tgz#cddb3ee4f9c64530dff640236661d42cb6a314f5"
+  integrity sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==
 
 mime-types@^2.1.12, mime-types@^2.1.35, mime-types@~2.1.24, mime-types@~2.1.34:
   version "2.1.35"
@@ -3035,7 +3030,7 @@ minimatch@^9.0.4:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.0, minimist@^1.2.6:
+minimist@^1.2.0:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
@@ -3103,13 +3098,6 @@ minizlib@^2.1.1, minizlib@^2.1.2:
   dependencies:
     minipass "^3.0.0"
     yallist "^4.0.0"
-
-mkdirp@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
-  integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
-  dependencies:
-    minimist "^1.2.6"
 
 mkdirp@^1.0.3:
   version "1.0.4"
@@ -3545,9 +3533,9 @@ pg-types@^2.1.0:
     postgres-interval "^1.1.0"
 
 pg@^8.11.3:
-  version "8.14.0"
-  resolved "https://registry.yarnpkg.com/pg/-/pg-8.14.0.tgz#5ef420ff6f89f2b96989f858d963291531e797f1"
-  integrity sha512-nXbVpyoaXVmdqlKEzToFf37qzyeeh7mbiXsnoWvstSqohj88yaa/I/Rq/HEVn2QPSZEuLIJa/jSpRDyzjEx4FQ==
+  version "8.14.1"
+  resolved "https://registry.yarnpkg.com/pg/-/pg-8.14.1.tgz#2e3d1f287b64797cdfc8d1ba000f61a7ff8d66ed"
+  integrity sha512-0TdbqfjwIun9Fm/r89oB7RFQ0bLgduAhiIqIXOsyKoiC/L54DbuAAzIEN/9Op0f1Po9X7iCPXGoa/Ah+2aI8Xw==
   dependencies:
     pg-connection-string "^2.7.0"
     pg-pool "^3.8.0"
@@ -3585,13 +3573,12 @@ pirates@^4.0.1:
   integrity sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==
 
 portfinder@^1.0.32:
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.34.tgz#65b49b1cfa5f481208a8675ffca761d107d75fa8"
-  integrity sha512-aTyliYB9lpGRx0iUzgbLpCz3xiCEBsPOiukSp1X8fOnHalHCKNxxpv2cSc00Cc49mpWUtlyRVFHRSaRJF8ew3g==
+  version "1.0.35"
+  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.35.tgz#6ebaf945da4d14c55d996e907b217f73e1dc06c9"
+  integrity sha512-73JaFg4NwYNAufDtS5FsFu/PdM49ahJrO1i44aCRsDWju1z5wuGDaqyFUQWR6aJoK2JPDWlaYYAGFNIGTSUHSw==
   dependencies:
     async "^3.2.6"
     debug "^4.3.6"
-    mkdirp "^0.5.6"
 
 postcss-import@^15.1.0:
   version "15.1.0"
@@ -4241,12 +4228,11 @@ sprintf-js@~1.0.2:
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
 sql-formatter@^15.3.0:
-  version "15.4.11"
-  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-15.4.11.tgz#10a8205aa82d60507811360d4735e81d4a21c137"
-  integrity sha512-AfIjH0mYxv0NVzs4mbcGIAcos2Si20LeF9GMk0VmVA4A3gs1PFIixVu3rtcz34ls7ghPAjrDb+XbRly/aF6HAg==
+  version "15.5.1"
+  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-15.5.1.tgz#ce5602e2dab6438a05afaaecb6424dec7e62ff25"
+  integrity sha512-H3XfFRpK8LybkU2mD2Vj3AF35YcfviwUuy3yl98Xp7DTneJJVB40L654DpHYIRctASNIQPoLo7+yCboOfkOpWA==
   dependencies:
     argparse "^2.0.1"
-    get-stdin "=8.0.0"
     nearley "^2.20.1"
 
 ssri@^10.0.0:
