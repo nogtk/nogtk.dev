@@ -17,8 +17,8 @@ export default function BlogTopPage({ posts }: Props) {
     <div className="min-h-screen bg-gray-100">
       <BlogTitle />
       <main>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <div className="px-4 py-6 sm:px-0">
+        <div className="max-w-7xl mx-auto py-6 px-2 sm:px-6 lg:px-8">
+          <div className="px-2 py-6 sm:px-0">
             <div className="rounded-lg bg-white shadow-lg overflow-hidden">
               <div className="p-4 sm:p-6 lg:p-8">
                 <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

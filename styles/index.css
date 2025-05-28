@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .znc.markdown-body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .znc.markdown-body h1 {
+    font-size: 20px;
+  }
+  
+  .znc.markdown-body h2 {
+    font-size: 18px;
+  }
+  
+  .znc.markdown-body h3 {
+    font-size: 16px;
+  }
+  
+  .znc.markdown-body p {
+    font-size: 14px;
+  }
+  
+  .znc.markdown-body ul,
+  .znc.markdown-body ol {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  
+  .znc.markdown-body li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 4px 0;
+  }
+  
+  .znc.markdown-body li p {
+    margin: 2px 0;
+  }
+  
+  .znc.markdown-body pre,
+  .znc.markdown-body code {
+    font-size: 12px;
+  }
+  
+  .znc.markdown-body pre {
+    padding: 8px;
+    margin: 8px 0;
+    overflow-x: auto;
+  }
+}
+
 .toc li {
     list-style-type: none;
     margin-bottom: 4px;
