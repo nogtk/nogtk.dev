@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* List spacing adjustments for all screen sizes */
+.znc.markdown-body ul,
+.znc.markdown-body ol {
+  margin: 6px 0;
+}
+
+.znc.markdown-body li {
+  margin: 2px 0;
+}
+
+.znc.markdown-body li p {
+  margin: 0;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 640px) {
   .znc.markdown-body {
