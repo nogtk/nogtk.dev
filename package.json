@@ -17,7 +17,7 @@
     "yarn": "^1.22.22",
     "zenn-content-css": "0.1.161",
     "zenn-embed-elements": "0.1.161",
-    "zenn-markdown-html": "0.1.160"
+    "zenn-markdown-html": "0.1.161"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
