@@ -4,6 +4,7 @@ type PostType = {
   date: string
   excerpt: string
   content: string
+  coverImage?: string
 }
 
 export default PostType

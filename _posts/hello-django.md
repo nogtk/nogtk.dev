@@ -2,6 +2,7 @@
 title: "django を触る"
 excerpt: "ざっくりどんなものか触ってみた"
 date: "2025-01-31"
+tech: "django"
 ---
 
 ## 書籍

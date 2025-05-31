@@ -2,9 +2,11 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "npm run generate-og && next build",
+    "build:static": "npm run generate-og && next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "generate-og": "node scripts/generate-og-images.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
