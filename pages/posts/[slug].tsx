@@ -45,7 +45,7 @@ export default function Post({ post }: Props) {
                 },
                 images: [
                   {
-                    url: `https://res.cloudinary.com/di1lterwq/image/upload/l_text:TakaoPGothic_70:${title},co_rgb:000,w_900,c_fit/v1684028422/ogp_sample3_e9gwlv.png`,
+                    url: `https://nogtk.dev/assets/og/${post.slug}.svg`,
                   },
                 ],
               }}
