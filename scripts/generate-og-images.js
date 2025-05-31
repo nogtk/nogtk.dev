@@ -30,11 +30,65 @@ const inferTechFromTitle = (title) => {
   return 'tech';
 };
 
+// テキストを複数行に分割する関数
+const splitTextIntoLines = (text, maxCharsPerLine = 20) => {
+  const words = text.split(' ');
+  const lines = [];
+  let currentLine = '';
+  
+  for (const word of words) {
+    if ((currentLine + word).length <= maxCharsPerLine) {
+      currentLine += (currentLine ? ' ' : '') + word;
+    } else {
+      if (currentLine) {
+        lines.push(currentLine);
+        currentLine = word;
+      } else {
+        // 単語が長すぎる場合は強制的に分割
+        lines.push(word);
+      }
+    }
+  }
+  
+  if (currentLine) {
+    lines.push(currentLine);
+  }
+  
+  return lines;
+};
+
 // SVG でOG画像を生成
 const generateOGImageSVG = (title, tech) => {
   const width = 1200;
   const height = 630;
   const techColor = getTechColor(tech);
+  
+  // タイトルの行分割とフォントサイズの調整
+  const titleLines = splitTextIntoLines(title, 25);
+  const maxLines = 3;
+  const displayLines = titleLines.slice(0, maxLines);
+  
+  // 行数に応じてフォントサイズを調整
+  let fontSize = 48;
+  if (displayLines.length >= 3) {
+    fontSize = 36;
+  } else if (displayLines.length >= 2) {
+    fontSize = 42;
+  }
+  
+  const lineHeight = fontSize * 1.2;
+  const totalTextHeight = displayLines.length * lineHeight;
+  const startY = 300 - (totalTextHeight / 2) + (lineHeight / 2);
+  
+  // タイトルのSVGテキスト要素を生成
+  const titleSVG = displayLines.map((line, index) => {
+    const y = startY + (index * lineHeight);
+    // 最後の行で切り詰められた場合は "..." を追加
+    const displayText = (index === maxLines - 1 && titleLines.length > maxLines) 
+      ? line + '...' 
+      : line;
+    return `<text x="${width/2}" y="${y}" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold">${displayText}</text>`;
+  }).join('\n  ');
   
   return `
 <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
@@ -58,10 +112,10 @@ const generateOGImageSVG = (title, tech) => {
   <text x="${width/2}" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">${tech.toUpperCase()}</text>
   
   <!-- タイトル -->
-  <text x="${width/2}" y="300" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="48" font-weight="bold">${title}</text>
+  ${titleSVG}
   
   <!-- サイト名 -->
-  <text x="${width/2}" y="400" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="28">nogtk.dev</text>
+  <text x="${width/2}" y="450" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="28">nogtk.dev</text>
 </svg>`;
 };
 
