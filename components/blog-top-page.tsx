@@ -7,28 +7,12 @@ type Props = {
 };
 
 export default function BlogTopPage({ posts }: Props) {
-  const featuredPost = posts[0];
-  const recentPosts = posts.slice(1);
+  const recentPosts = posts;
 
   return (
     <div className="bg-gray-50 text-gray-800">
       <BlogTitle />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {featuredPost && (
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">注目記事</h2>
-            <PostPreview
-              key={featuredPost.slug}
-              title={featuredPost.title}
-              date={featuredPost.date}
-              slug={featuredPost.slug}
-              excerpt={featuredPost.excerpt}
-              coverImage={featuredPost.coverImage}
-              featured={true}
-            />
-          </section>
-        )}
-
         <section>
           <h2 className="text-3xl font-bold text-gray-900 mb-8">最新記事</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

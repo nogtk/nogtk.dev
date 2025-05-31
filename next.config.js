@@ -1,4 +1,4 @@
 module.exports = {
   trailingSlash: true,
-  output: 'export',
+  // output: 'export', // Commented out for development with API routes
 };
