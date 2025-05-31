@@ -5,13 +5,12 @@ type Props = {
   date: string;
   excerpt: string;
   slug: string;
-  coverImage?: string;
   featured?: boolean;
 };
 
-const PostPreview = ({ title, date, excerpt, slug, coverImage, featured }: Props) => {
-  const defaultImage = "https://placehold.co/600x400/E0E7FF/4A5568?text=記事画像";
-  const imageUrl = coverImage || defaultImage;
+const PostPreview = ({ title, date, excerpt, slug, featured }: Props) => {
+  // assets/og配下のSVG画像を使用
+  const imageUrl = `/assets/og/${slug}.svg`;
 
   if (featured) {
     return (

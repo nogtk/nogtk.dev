@@ -15,6 +15,8 @@ export default function Index({ allPosts }: Props) {
       <Layout>
         <Head>
           <title>{"nogtk.dev"}</title>
+          <meta property="og:image" content="https://res.cloudinary.com/di1lterwq/image/upload/v1692798736/Frame_1_pt3mzq.png" />
+          <meta name="twitter:image" content="https://res.cloudinary.com/di1lterwq/image/upload/v1692798736/Frame_1_pt3mzq.png" />
         </Head>
         <Container>
           <BlogTopPage posts={allPosts} />;
