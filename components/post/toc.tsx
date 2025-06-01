@@ -17,10 +17,10 @@ export const TableOfContents: React.VFC = () => {
   }, []);
 
   return (
-    <div className="rounded-lg bg-white shadow-lg overflow-hidden">
-      <div className="toc-container p-4 sm:p-6">
-        <div className="text-center text-xl font-semibold mb-4">目次</div>
-        <div className="toc" />
+    <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+      <div className="p-5">
+        <h3 className="text-lg font-semibold text-slate-800 mb-4 border-b border-slate-200 pb-3">目次</h3>
+        <nav className="toc space-y-1" />
       </div>
     </div>
   );

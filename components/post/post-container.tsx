@@ -12,38 +12,27 @@ type Props = {
 const PostContainer = ({ post }: Props) => {
   return (
     <>
-      <article className="flex-grow mb-32">
-        <div className="flex flex-col xl:flex-row justify-center xl:mx-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16 flex-grow">
+        <div className="flex flex-col xl:flex-row justify-center gap-8 xl:gap-12">
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
           </Head>
-          <main className="order-2 xl:order-1">
-            {/* 1024px の時は max-w-xl がちょうどいいが、今はそれを無視しておく */}
-            <div className="w-full xl:max-w-4xl mx-auto py-6 px-0 sm:px-6 lg:px-10">
-                <div className="rounded-lg bg-white shadow-lg overflow-hidden">
-                  <div className="p-0 sm:p-6 lg:p-8">
-                    <div className="mt-5">
-                      <div className="bg-white overflow-hidden shadow rounded-lg">
-                        <div className="p-5">
-                          <PostTitle
-                            title={post.title}
-                            date={post.date}
-                          ></PostTitle>
-                          <PostBody content={post.content}></PostBody>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <main className="w-full xl:max-w-3xl bg-white shadow-xl rounded-lg p-6 sm:p-8 md:p-10 order-2 xl:order-1">
+            <div className="markdown-body">
+              <PostTitle
+                title={post.title}
+                date={post.date}
+              ></PostTitle>
+              <PostBody content={post.content}></PostBody>
+            </div>
           </main>
-          <aside className="w-full xl:w-1/3 order-1 xl:order-2 lg:mx-auto">
-            <div className="sticky top-12 xl:mt-12 mx-4 xl:mx-0 xl:mt-12">
+          <aside className="w-full xl:w-80 order-1 xl:order-2 xl:max-h-[calc(100vh-10rem)] overflow-y-auto">
+            <div className="sticky top-20">
               <TableOfContents />
             </div>
           </aside>
         </div>
-      </article>
+      </div>
     </>
   );
 };
