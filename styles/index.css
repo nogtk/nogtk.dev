@@ -107,7 +107,7 @@ body {
 .toc > li > a {
   display: flex;
   align-items: center;
-  text-sm;
+  font-size: 0.875rem;
   color: #64748b;
   padding: 6px 10px;
   border-radius: 6px;
