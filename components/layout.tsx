@@ -9,7 +9,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen flex flex-col bg-slate-100 text-slate-800">
+      <div className="min-h-screen flex flex-col">
         <main className="flex-grow">{children}</main>
         <Footer />
       </div>
