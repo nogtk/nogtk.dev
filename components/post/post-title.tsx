@@ -6,10 +6,8 @@ type Props = {
 const PostTitle = ({ title, date }: Props) => {
   return (
     <>
-      <h2 className="text-3xl leading-12 font-bold text-gray-900">{title}</h2>
-      <div className="mt-3">
-        <span className="text-sm text-gray-500 dark:text-gray-400">{date}</span>
-      </div>
+      <h1 className="text-4xl leading-tight font-bold text-slate-900 mb-2">{title}</h1>
+      <div className="text-sm text-slate-500 mb-6">公開日: {date}</div>
     </>
   );
 };
