@@ -2,11 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "npm run generate-og && next build",
-    "build:static": "npm run generate-og && next build",
+    "build": "npm run generate-og && npm run generate-sitemap && next build",
+    "build:static": "npm run generate-og && npm run generate-sitemap && next build",
     "start": "next start",
     "typecheck": "tsc",
-    "generate-og": "node scripts/generate-og-images.js"
+    "generate-og": "node scripts/generate-og-images.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
