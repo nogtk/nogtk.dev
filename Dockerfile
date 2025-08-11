@@ -13,6 +13,8 @@ RUN apk add bash make g++ && \
 
 RUN apk add python3
 
+RUN corepack enable yarn
+
 USER $USER_GID:$USER_UID
 
 WORKDIR /home/workspace
