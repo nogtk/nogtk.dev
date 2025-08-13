@@ -1,9 +1,11 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+export const config = {
+  runtime: 'edge',
+};
 
-export async function GET(request: NextRequest) {
+export default async function handler(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const title = searchParams.get('title') || 'Blog Post';

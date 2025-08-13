@@ -4,7 +4,7 @@ import React from "react";
 import { useEffect } from "react";
 import tocbot from "tocbot";
 
-export const TableOfContents: React.VFC = () => {
+export const TableOfContents: React.FC = () => {
   useEffect(() => {
     tocbot.init({
       tocSelector: ".toc",

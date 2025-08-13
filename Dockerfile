@@ -1,4 +1,4 @@
-FROM node:20.10.0-alpine3.17
+FROM node:22.12.0-alpine3.20
 
 ENV GROUPNAME=app
 ENV USERNAME=app
@@ -13,11 +13,13 @@ RUN apk add bash make g++ && \
 
 RUN apk add python3
 
-RUN corepack enable yarn
+RUN corepack enable
 
 USER $USER_GID:$USER_UID
 
 WORKDIR /home/workspace
 
-COPY --chown=app:app ./package*.json ./
+COPY --chown=app:app ./package.json ./yarn.lock ./.yarnrc.yml ./
+RUN corepack install
 COPY --chown=app:app . .
+RUN yarn install --immutable
