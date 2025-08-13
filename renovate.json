@@ -1,15 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "docker": {
-    "enabled": true
-  },
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker", "npm", "node-version"],
-      "updateTypes": ["minor", "patch"],
+      "matchCategories": [
+        "docker"
+      ],
+      "enabled": true
+    },
+    {
+      "matchDatasources": [
+        "docker",
+        "npm",
+        "node-version"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ]
