@@ -31,22 +31,13 @@ function generateSitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nogtk.dev</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://nogtk.dev/me</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  ${posts
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </url>${posts
     .map((post) => {
       return `
   <url>
-    <loc>https://nogtk.dev/posts/${post.slug}</loc>
-    <lastmod>${new Date(post.date).toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nogtk.dev/posts/${post.slug}/</loc>
+    <lastmod>${new Date(post.date).toISOString()}</lastmod>
   </url>`;
     })
     .join('')}
