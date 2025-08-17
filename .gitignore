@@ -38,3 +38,6 @@ next-env.d.ts
 
 # generated files
 /public/sitemap.xml
+
+# yarn
+.yarn/install-state.gz
