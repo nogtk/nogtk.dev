@@ -14,6 +14,7 @@ const getTechColor = (technology) => {
     typescript: '#007ACC',
     react: '#61DAFB',
     nextjs: '#000000',
+    aws: '#FF9900',
     default: '#4A5568'
   };
   return techColors[technology?.toLowerCase()] || techColors.default;
@@ -27,6 +28,7 @@ const inferTechFromTitle = (title) => {
   if (titleLower.includes('kotlin')) return 'kotlin';
   if (titleLower.includes('rust')) return 'rust';
   if (titleLower.includes('python')) return 'python';
+  if (titleLower.includes('s3') || titleLower.includes('aws')) return 'aws';
   return 'tech';
 };
 
