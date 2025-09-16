@@ -1,6 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Tailwind v4 テーマトークン（v3のtailwind.config.jsから移行） */
+@theme {
+  /* colors */
+  --color-accent-1: #FAFAFA;
+  --color-accent-2: #EAEAEA;
+  --color-accent-7: #333333;
+  --color-success: #0070f3;
+  --color-cyan: #79FFE1;
+
+  /* spacing */
+  --spacing-28: 7rem;
+
+  /* letter-spacing */
+  --tracking-tighter: -0.04em;
+
+  /* line-height */
+  --leading-tight: 1.2;
+
+  /* font-size */
+  --text-5xl: 2.5rem;
+  --text-6xl: 2.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6.25rem;
+
+  /* shadows */
+  --shadow-sm: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
 
 /* List spacing adjustments for all screen sizes */
 .znc.markdown-body ul,
