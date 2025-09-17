@@ -10,6 +10,7 @@ const getTechColor = (technology) => {
     docker: '#2496ED',
     kotlin: '#7F52FF',
     rust: '#000000',
+    git: '#F05032',
     javascript: '#F7DF1E',
     typescript: '#007ACC',
     react: '#61DAFB',
