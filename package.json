@@ -17,7 +17,7 @@
     "react-dom": "^19.0.0",
     "tocbot": "^4.30.0",
     "typescript": "^5.7.2",
-    "zenn-content-css": "0.2.7",
+    "zenn-content-css": "0.2.8",
     "zenn-embed-elements": "0.2.7",
     "zenn-markdown-html": "0.2.7"
   },
