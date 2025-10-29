@@ -19,7 +19,7 @@
     "typescript": "^5.7.2",
     "zenn-content-css": "0.2.9",
     "zenn-embed-elements": "0.2.9",
-    "zenn-markdown-html": "0.2.8"
+    "zenn-markdown-html": "0.2.9"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
