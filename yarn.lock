@@ -6291,7 +6291,7 @@ __metadata:
     tailwindcss: "npm:^3.4.15"
     tocbot: "npm:^4.30.0"
     typescript: "npm:^5.7.2"
-    zenn-content-css: "npm:0.2.9"
+    zenn-content-css: "npm:0.2.10"
     zenn-embed-elements: "npm:0.2.9"
     zenn-markdown-html: "npm:0.2.9"
   languageName: unknown
@@ -7821,10 +7821,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zenn-content-css@npm:0.2.9":
-  version: 0.2.9
-  resolution: "zenn-content-css@npm:0.2.9"
-  checksum: 10c0/7f1b95a3e18969f8d07537fd2bbb13e5c9bcaf3330e5cd933d130cc2aa43b6b809bf8eaa48d9271fa43089ba7da2e4a428990ec6f498a55990979c5ead9fd00c
+"zenn-content-css@npm:0.2.10":
+  version: 0.2.10
+  resolution: "zenn-content-css@npm:0.2.10"
+  checksum: 10c0/c0f2634f1ee03a56dd5ddf392929ca1e524a1c2c2eba44ca764e02eed545ccd10bc3597d91c24ecc523f4ad1383d861826518d81c7a79080441dee49a007b41f
   languageName: node
   linkType: hard
 
