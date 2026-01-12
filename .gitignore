@@ -41,3 +41,6 @@ next-env.d.ts
 
 # yarn
 .yarn/install-state.gz
+
+# npm (project uses yarn)
+package-lock.json
