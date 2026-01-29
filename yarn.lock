@@ -5038,14 +5038,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-seo@npm:^6.6.0":
-  version: 6.8.0
-  resolution: "next-seo@npm:6.8.0"
+"next-seo@npm:^7.0.0":
+  version: 7.1.0
+  resolution: "next-seo@npm:7.1.0"
   peerDependencies:
-    next: ^8.1.1-canary.54 || >=9.0.0
-    react: ">=16.0.0"
-    react-dom: ">=16.0.0"
-  checksum: 10c0/63fe63dfb7e5dc8438185f698bec1428925b667808bc6ba5fc4f39758545c50ce049bc48c937d43246ee51913796673b995bd39afd10a8742108db89f0d11e52
+    next: ">=13.4.0"
+    react: ">=18.2.0"
+  checksum: 10c0/224bdbddf5d87bad7a1469d683f8ca2876e384dd4f66d1dbdcc4b4486b2240730dba79b8d89ae9e3b06d987104d7f7946629ff173c26f1f51421a8415dae0469
   languageName: node
   linkType: hard
 
@@ -6259,7 +6258,7 @@ __metadata:
     firebase-tools: "npm:^15.0.0"
     gray-matter: "npm:^4.0.3"
     next: "npm:^16.0.0"
-    next-seo: "npm:^6.6.0"
+    next-seo: "npm:^7.0.0"
     postcss: "npm:^8.4.49"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
