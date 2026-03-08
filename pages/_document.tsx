@@ -5,8 +5,14 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <script src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
-      </Head> 
+      </Head>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+          })();
+        ` }} />
         <Main />
         <NextScript />
       </body>

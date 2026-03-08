@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -9,7 +10,8 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
-        // Solarized Light palette
+        // Solarized palette
+        'sol-base03': '#002b36',
         'sol-base3':  '#fdf6e3',
         'sol-base2':  '#eee8d5',
         'sol-base1':  '#93a1a1',

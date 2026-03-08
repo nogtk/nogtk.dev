@@ -16,14 +16,14 @@ const PostPreview = ({ title, date, excerpt, slug, coverImage, featured }: Props
 
   if (featured) {
     return (
-      <Link href={`/posts/${slug}`} className="block bg-sol-base3 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <Link href={`/posts/${slug}`} className="block bg-sol-base3 dark:bg-sol-base02 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
         <img src={imageUrl} className="w-full h-64 sm:h-80 md:h-96 object-cover" alt={title} />
         <div className="p-6">
-          <h3 className="text-2xl font-bold mb-2 text-sol-base02 hover:text-sol-blue transition-colors">
+          <h3 className="text-2xl font-bold mb-2 text-sol-base02 dark:text-sol-base2 hover:text-sol-blue transition-colors">
             {title}
           </h3>
-          <p className="text-sol-base00 text-sm mb-3">{date}</p>
-          <p className="text-sol-base01 leading-relaxed">{excerpt}</p>
+          <p className="text-sol-base00 dark:text-sol-base0 text-sm mb-3">{date}</p>
+          <p className="text-sol-base01 dark:text-sol-base1 leading-relaxed">{excerpt}</p>
           <span className="inline-block mt-4 text-sol-blue hover:text-sol-cyan font-semibold transition-colors">
             続きを読む &rarr;
           </span>
@@ -33,14 +33,14 @@ const PostPreview = ({ title, date, excerpt, slug, coverImage, featured }: Props
   }
 
   return (
-    <Link href={`/posts/${slug}`} className="block bg-sol-base3 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+    <Link href={`/posts/${slug}`} className="block bg-sol-base3 dark:bg-sol-base02 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
       <img src={imageUrl} className="w-full h-48 object-cover" alt={title} />
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-sol-base02 hover:text-sol-blue transition-colors">
+        <h3 className="text-xl font-bold mb-2 text-sol-base02 dark:text-sol-base2 hover:text-sol-blue transition-colors">
           {title}
         </h3>
-        <p className="text-sol-base00 text-sm mb-3">{date}</p>
-        <p className="text-sol-base01 text-sm leading-relaxed mb-4">{excerpt}</p>
+        <p className="text-sol-base00 dark:text-sol-base0 text-sm mb-3">{date}</p>
+        <p className="text-sol-base01 dark:text-sol-base1 text-sm leading-relaxed mb-4">{excerpt}</p>
         <span className="text-sol-blue hover:text-sol-cyan font-semibold text-sm transition-colors">
           続きを読む &rarr;
         </span>

@@ -6,9 +6,9 @@ type Props = {
 const PostTitle = ({ title, date }: Props) => {
   return (
     <>
-      <h2 className="text-3xl leading-12 font-bold text-sol-base02">{title}</h2>
+      <h2 className="text-3xl leading-12 font-bold text-sol-base02 dark:text-sol-base2">{title}</h2>
       <div className="mt-3">
-        <span className="text-sm text-sol-base1">{date}</span>
+        <span className="text-sm text-sol-base1 dark:text-sol-base0">{date}</span>
       </div>
     </>
   );
