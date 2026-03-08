@@ -2,6 +2,243 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Solarized Light global base ── */
+body {
+  background-color: #fdf6e3;
+  color: #657b83;
+}
+
+/* ── Zenn markdown content: Solarized Light overrides ── */
+.znc.markdown-body {
+  color: #657b83;
+  background-color: transparent;
+}
+
+.znc.markdown-body h1,
+.znc.markdown-body h2,
+.znc.markdown-body h3,
+.znc.markdown-body h4,
+.znc.markdown-body h5,
+.znc.markdown-body h6 {
+  color: #073642;
+}
+
+.znc.markdown-body a {
+  color: #268bd2;
+}
+
+.znc.markdown-body a:hover {
+  color: #2aa198;
+}
+
+.znc.markdown-body blockquote {
+  border-left-color: #93a1a1;
+  background-color: #eee8d5;
+  color: #586e75;
+}
+
+.znc.markdown-body code:not(pre code) {
+  background-color: #eee8d5;
+  color: #cb4b16;
+  border: 1px solid #93a1a1;
+}
+
+.znc.markdown-body pre {
+  border: 1px solid #93a1a1;
+}
+
+.znc.markdown-body hr {
+  border-color: #93a1a1;
+}
+
+.znc.markdown-body table th {
+  background-color: #eee8d5;
+  color: #073642;
+}
+
+.znc.markdown-body table td {
+  border-color: #93a1a1;
+}
+
+.znc.markdown-body table tr:nth-child(even) {
+  background-color: #eee8d5;
+}
+
+/* ── highlight.js: Solarized Light syntax colors ── */
+/* !important で zenn-content-css のデフォルト色を強制オーバーライド */
+.znc pre,
+.znc pre code,
+.znc .hljs {
+  background: #eee8d5 !important;
+  color: #586e75 !important; /* base01: #eee8d5上でのSolarized標準テキスト色 */
+}
+
+.znc .hljs-comment,
+.znc .hljs-quote {
+  color: #93a1a1 !important;
+  font-style: italic;
+}
+
+.znc .hljs-keyword,
+.znc .hljs-selector-tag,
+.znc .hljs-addition {
+  color: #859900 !important; /* green */
+}
+
+.znc .hljs-number,
+.znc .hljs-string,
+.znc .hljs-meta .hljs-meta-string,
+.znc .hljs-literal,
+.znc .hljs-doctag,
+.znc .hljs-regexp {
+  color: #2aa198 !important; /* cyan */
+}
+
+.znc .hljs-title,
+.znc .hljs-section,
+.znc .hljs-name,
+.znc .hljs-selector-id,
+.znc .hljs-selector-class {
+  color: #268bd2 !important; /* blue */
+}
+
+.znc .hljs-attribute,
+.znc .hljs-attr,
+.znc .hljs-variable,
+.znc .hljs-template-variable,
+.znc .hljs-class .hljs-title,
+.znc .hljs-type {
+  color: #b58900 !important; /* yellow */
+}
+
+.znc .hljs-symbol,
+.znc .hljs-bullet,
+.znc .hljs-subst,
+.znc .hljs-meta,
+.znc .hljs-meta .hljs-keyword,
+.znc .hljs-selector-attr,
+.znc .hljs-selector-pseudo,
+.znc .hljs-link {
+  color: #cb4b16 !important; /* orange */
+}
+
+.znc .hljs-built_in,
+.znc .hljs-deletion {
+  color: #dc322f !important; /* red */
+}
+
+.znc .hljs-formula {
+  background: #eee8d5 !important;
+}
+
+.znc .hljs-emphasis {
+  font-style: italic;
+}
+
+.znc .hljs-strong {
+  font-weight: bold;
+}
+
+/* ── Prism.js tokens: Solarized Light override ── */
+/* Zenn は Prism も使用。dark-theme向けのトークン色を全てSolarized Lightに上書き */
+.znc .token.comment,
+.znc .token.prolog,
+.znc .token.doctype,
+.znc .token.cdata {
+  color: #93a1a1 !important; /* base1 */
+}
+
+.znc .token.string,
+.znc .token.attr-value,
+.znc .token.regex,
+.znc .token.important,
+.znc .token.url {
+  color: #2aa198 !important; /* cyan */
+}
+
+.znc .token.operator,
+.znc .token.punctuation {
+  color: #586e75 !important; /* base01 */
+}
+
+.znc .token.boolean,
+.znc .token.number,
+.znc .token.constant,
+.znc .token.symbol {
+  color: #d33682 !important; /* magenta */
+}
+
+.znc .token.keyword,
+.znc .token.atrule,
+.znc .token.rule {
+  color: #859900 !important; /* green */
+}
+
+.znc .token.selector,
+.znc .token.tag {
+  color: #268bd2 !important; /* blue */
+}
+
+.znc .token.function,
+.znc .token.property,
+.znc .token.class-name {
+  color: #268bd2 !important; /* blue */
+}
+
+/* variable / parameter / placeholder を yellow に (dark themeでは #fff だった) */
+.znc .token.variable,
+.znc .token.parameter,
+.znc .token.placeholder {
+  color: #b58900 !important; /* yellow */
+}
+
+.znc .token.attr-name,
+.znc .token.builtin {
+  color: #b58900 !important; /* yellow */
+}
+
+.znc .token.deleted {
+  color: #dc322f !important; /* red */
+}
+
+.znc .token.inserted {
+  color: #859900 !important; /* green */
+}
+
+.znc .token.entity {
+  color: #cb4b16 !important; /* orange */
+  cursor: help;
+}
+
+.znc .token.coord {
+  color: #268bd2 !important; /* blue */
+}
+
+.znc .token.namespace {
+  opacity: 0.7;
+}
+
+/* ── Zenn embed/link cards: blend iframe into Solarized Light ── */
+/* mix-blend-mode: multiply で white×base3 = base3 になりiframeが馴染む。
+   実際のDOMではlink-cardのiframeに親クラスが付かず直接<p>の子になるため
+   .znc iframe に広く適用し、動画/インタラクティブ系だけ除外する。 */
+.znc iframe {
+  mix-blend-mode: multiply;
+  border-radius: 8px;
+}
+
+/* YouTube・コード系のインタラクティブiframeはblendを無効化（色が変わると困る） */
+.znc .embed-youtube iframe,
+.znc .embed-codepen iframe,
+.znc .embed-stackblitz iframe,
+.znc .embed-jsfiddle iframe,
+.znc .embed-speakerdeck iframe,
+.znc .embed-slideshare iframe,
+.znc .embed-docswell iframe {
+  mix-blend-mode: normal;
+  border-radius: 0;
+}
+
 /* List spacing adjustments for all screen sizes */
 .znc.markdown-body ul,
 .znc.markdown-body ol {
@@ -83,15 +320,16 @@
     transform: translateY(-50%);
     width: 8px;
     height: 8px;
-    border: 2px solid blue;
+    border: 2px solid #268bd2;
     border-radius: 50%; /* 丸形にする */
     background-color: transparent;
 }
 
 .toc a {
 text-decoration: none;
+color: #657b83;
 transition: color 0.3s ease;
-opacity: 0.5;
+opacity: 0.6;
 }
 
 .toc a:hover {
@@ -104,6 +342,6 @@ opacity: 1;
 }
 
 .toc li.is-active-li::before {
-    background-color: blue; /* 青色で埋めた丸 */
+    background-color: #268bd2; /* Solarized blue */
     border: none; /* 枠線を削除 */
 }

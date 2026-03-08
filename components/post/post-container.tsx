@@ -20,10 +20,10 @@ const PostContainer = ({ post }: Props) => {
           <main className="order-2 xl:order-1">
             {/* 1024px の時は max-w-xl がちょうどいいが、今はそれを無視しておく */}
             <div className="w-full xl:max-w-4xl mx-auto py-6 px-0 sm:px-6 lg:px-10">
-                <div className="rounded-lg bg-white shadow-lg overflow-hidden">
+                <div className="rounded-lg bg-sol-base3 shadow-lg overflow-hidden">
                   <div className="p-0 sm:p-6 lg:p-8">
                     <div className="mt-5">
-                      <div className="bg-white overflow-hidden shadow rounded-lg">
+                      <div className="overflow-hidden shadow rounded-lg">
                         <div className="p-5">
                           <PostTitle
                             title={post.title}
