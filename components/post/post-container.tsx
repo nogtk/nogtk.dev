@@ -13,7 +13,7 @@ const PostContainer = ({ post }: Props) => {
   return (
     <>
       <article className="flex-grow mb-32">
-        <div className="flex flex-col xl:flex-row justify-center xl:mx-32">
+        <div className="flex flex-col xl:flex-row justify-center max-w-6xl mx-auto xl:px-8">
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
           </Head>
