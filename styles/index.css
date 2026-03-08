@@ -219,11 +219,24 @@ body {
 }
 
 /* ── Zenn embed/link cards: blend iframe into Solarized Light ── */
-/* mix-blend-mode: multiply で white×base3 = base3 になりiframeが馴染む */
-/* link-card専用iframeのみ適用（YouTube等のインタラクティブiframeには適用しない） */
-.znc .zenn-embedded-link-card iframe {
+/* mix-blend-mode: multiply で white×base3 = base3 になりiframeが馴染む。
+   実際のDOMではlink-cardのiframeに親クラスが付かず直接<p>の子になるため
+   .znc iframe に広く適用し、動画/インタラクティブ系だけ除外する。 */
+.znc iframe {
   mix-blend-mode: multiply;
   border-radius: 8px;
+}
+
+/* YouTube・コード系のインタラクティブiframeはblendを無効化（色が変わると困る） */
+.znc .embed-youtube iframe,
+.znc .embed-codepen iframe,
+.znc .embed-stackblitz iframe,
+.znc .embed-jsfiddle iframe,
+.znc .embed-speakerdeck iframe,
+.znc .embed-slideshare iframe,
+.znc .embed-docswell iframe {
+  mix-blend-mode: normal;
+  border-radius: 0;
 }
 
 /* List spacing adjustments for all screen sizes */
