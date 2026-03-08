@@ -23,7 +23,7 @@ const PostContainer = ({ post }: Props) => {
                 <div className="rounded-lg bg-sol-base3 shadow-lg overflow-hidden">
                   <div className="p-0 sm:p-6 lg:p-8">
                     <div className="mt-5">
-                      <div className="bg-sol-base3 overflow-hidden shadow rounded-lg">
+                      <div className="overflow-hidden shadow rounded-lg">
                         <div className="p-5">
                           <PostTitle
                             title={post.title}

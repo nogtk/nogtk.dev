@@ -44,7 +44,6 @@ body {
 }
 
 .znc.markdown-body pre {
-  background-color: #eee8d5;
   border: 1px solid #93a1a1;
 }
 
@@ -221,26 +220,10 @@ body {
 
 /* ── Zenn embed/link cards: blend iframe into Solarized Light ── */
 /* mix-blend-mode: multiply で white×base3 = base3 になりiframeが馴染む */
-.znc iframe {
+/* link-card専用iframeのみ適用（YouTube等のインタラクティブiframeには適用しない） */
+.znc .zenn-embedded-link-card iframe {
   mix-blend-mode: multiply;
   border-radius: 8px;
-}
-
-.znc .embed-card,
-.znc .embed-zenn-link,
-.znc [class*="embed"] {
-  background-color: #fdf6e3 !important;
-  border-color: #93a1a1 !important;
-}
-
-.znc .embed-card *,
-.znc .embed-zenn-link * {
-  color: #657b83 !important;
-}
-
-.znc .embed-card a,
-.znc .embed-zenn-link a {
-  color: #268bd2 !important;
 }
 
 /* List spacing adjustments for all screen sizes */

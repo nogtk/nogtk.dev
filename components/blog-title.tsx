@@ -5,7 +5,7 @@ const BlogTitle = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-sol-base3 shadow-sm sticky top-0 z-50" style={{borderBottom: '1px solid #eee8d5'}}>
+    <header className="bg-sol-base3 shadow-sm sticky top-0 z-50 border-b border-sol-base2">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">

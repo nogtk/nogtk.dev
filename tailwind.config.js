@@ -17,7 +17,6 @@ module.exports = {
         'sol-base00': '#657b83',
         'sol-base01': '#586e75',
         'sol-base02': '#073642',
-        'sol-base03': '#002b36',
         'sol-blue':   '#268bd2',
         'sol-cyan':   '#2aa198',
         'sol-green':  '#859900',
@@ -25,7 +24,6 @@ module.exports = {
         'sol-orange': '#cb4b16',
         'sol-red':    '#dc322f',
         'sol-magenta':'#d33682',
-        'sol-violet': '#6c71c4',
       },
       spacing: {
         28: '7rem',
