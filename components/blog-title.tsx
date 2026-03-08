@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const SunIcon = () => (
   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -16,13 +16,10 @@ const MoonIcon = () => (
 
 const BlogTitle = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const current = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' | null;
-    setTheme(stored || current || 'light');
-  }, []);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof document === 'undefined') return 'light';
+    return (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') || 'light';
+  });
 
   const toggleTheme = () => {
     const next = theme === 'light' ? 'dark' : 'light';
@@ -54,6 +51,7 @@ const BlogTitle = () => {
               onClick={toggleTheme}
               className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue transition-colors focus:outline-none"
               aria-label="テーマを切り替える"
+              suppressHydrationWarning
             >
               {theme === 'light' ? <MoonIcon /> : <SunIcon />}
             </button>
@@ -63,6 +61,7 @@ const BlogTitle = () => {
               onClick={toggleTheme}
               className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue focus:outline-none"
               aria-label="テーマを切り替える"
+              suppressHydrationWarning
             >
               {theme === 'light' ? <MoonIcon /> : <SunIcon />}
             </button>
