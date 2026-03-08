@@ -10,24 +10,24 @@ export default function Me() {
         <Head>
           <title>About Me - nogtk.dev</title>
         </Head>
-        <div className="min-h-screen bg-sol-base2">
+        <div className="min-h-screen bg-sol-base2 dark:bg-sol-base03">
           <BlogTitle />
           <Container>
             <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-              <div className="bg-sol-base3 rounded-lg shadow-lg p-8">
-                <h1 className="text-3xl font-bold text-sol-base02 mb-6">About Me</h1>
+              <div className="bg-sol-base3 dark:bg-sol-base02 rounded-lg shadow-lg p-8">
+                <h1 className="text-3xl font-bold text-sol-base02 dark:text-sol-base2 mb-6">About Me</h1>
 
                 <div className="prose max-w-none">
-                  <p className="text-lg text-sol-base01 mb-6">
+                  <p className="text-lg text-sol-base01 dark:text-sol-base1 mb-6">
                     こんにちは、nogtk です。
                   </p>
 
-                  <p className="text-sol-base01 mb-6">
+                  <p className="text-sol-base01 dark:text-sol-base1 mb-6">
                     ソフトウェア開発や技術、あるいは日常を記録するためのブログを書いています。
                     日々の開発で得られた知見や興味深い技術について共有していきたいと思います。
                   </p>
 
-                  <h2 className="text-2xl font-bold text-sol-base02 mt-8 mb-4">Links</h2>
+                  <h2 className="text-2xl font-bold text-sol-base02 dark:text-sol-base2 mt-8 mb-4">Links</h2>
 
                   <div className="space-y-3">
                     <div className="flex items-center">

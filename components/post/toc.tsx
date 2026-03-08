@@ -17,9 +17,9 @@ export const TableOfContents: React.FC = () => {
   }, []);
 
   return (
-    <div className="rounded-lg bg-sol-base3 shadow-lg overflow-hidden border border-sol-base2">
+    <div className="rounded-lg bg-sol-base3 dark:bg-sol-base03 shadow-lg overflow-hidden border border-sol-base2 dark:border-sol-base02">
       <div className="toc-container p-4 sm:p-6">
-        <div className="text-center text-xl font-semibold mb-4">目次</div>
+        <div className="text-center text-xl font-semibold mb-4 dark:text-sol-base1">目次</div>
         <div className="toc" />
       </div>
     </div>

@@ -12,7 +12,7 @@ type Props = {
 const PostContainer = ({ post }: Props) => {
   return (
     <>
-      <article className="flex-grow mb-32">
+      <article className="flex-grow mb-32 bg-sol-base2 dark:bg-sol-base03 min-h-screen">
         <div className="flex flex-col xl:flex-row justify-center xl:mx-32">
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
@@ -20,7 +20,7 @@ const PostContainer = ({ post }: Props) => {
           <main className="order-2 xl:order-1">
             {/* 1024px の時は max-w-xl がちょうどいいが、今はそれを無視しておく */}
             <div className="w-full xl:max-w-4xl mx-auto py-6 px-0 sm:px-6 lg:px-10">
-                <div className="rounded-lg bg-sol-base3 shadow-lg overflow-hidden">
+                <div className="rounded-lg bg-sol-base3 dark:bg-sol-base02 shadow-lg overflow-hidden">
                   <div className="p-0 sm:p-6 lg:p-8">
                     <div className="mt-5">
                       <div className="overflow-hidden shadow rounded-lg">
