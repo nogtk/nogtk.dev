@@ -6274,7 +6274,7 @@ __metadata:
     tocbot: "npm:^4.30.0"
     typescript: "npm:^5.7.2"
     zenn-content-css: "npm:0.4.5"
-    zenn-embed-elements: "npm:0.4.5"
+    zenn-embed-elements: "npm:0.4.6"
     zenn-markdown-html: "npm:0.2.11"
   languageName: unknown
   linkType: soft
@@ -7749,10 +7749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zenn-embed-elements@npm:0.4.5":
-  version: 0.4.5
-  resolution: "zenn-embed-elements@npm:0.4.5"
-  checksum: 10c0/50914060f7385c5ddec55db91178ad74c36b28ca714ee9f3e4ebfbf874d8333d5239254b0effdee58ad704cee714c15ec9d94777563db67524f0c8eb463b0063
+"zenn-embed-elements@npm:0.4.6":
+  version: 0.4.6
+  resolution: "zenn-embed-elements@npm:0.4.6"
+  checksum: 10c0/de1192b04594d20e0e27781449e53265fc32eb1bcc599a259bc47ed454c32f514370343a198417534ce9e09f1be382f82a59b534239f5a823d659e675716b83d
   languageName: node
   linkType: hard
 
