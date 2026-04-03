@@ -3175,8 +3175,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.12.0
-  resolution: "firebase-tools@npm:15.12.0"
+  version: 15.13.0
+  resolution: "firebase-tools@npm:15.13.0"
   dependencies:
     "@apphosting/build": "npm:^0.1.7"
     "@apphosting/common": "npm:^0.0.8"
@@ -3218,7 +3218,7 @@ __metadata:
     jsonwebtoken: "npm:^9.0.2"
     leven: "npm:^3.1.0"
     libsodium-wrappers: "npm:^0.7.10"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.18.0"
     lsofi: "npm:1.0.0"
     marked: "npm:^13.0.2"
     marked-terminal: "npm:^7.0.0"
@@ -3256,7 +3256,7 @@ __metadata:
     zod-to-json-schema: "npm:^3.24.5"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/360170316d5355ce188550179bd2b625fb7d1a027d2f9612adcb68220c025d534d73cc4bba9c6ac5d04eb1c29d8cfed080d99a09901a23988796b0062ab6840b
+  checksum: 10c0/fe2d140d0a15132b404432a4a22443ca598c5d5b188db6a11819d4f7ad5407fb63ec801d2f2aa447b76c868e30cfbdc7c09710e53c735335fcf8a4cabff4a74c
   languageName: node
   linkType: hard
 
@@ -4495,6 +4495,13 @@ __metadata:
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.18.0":
+  version: 4.18.1
+  resolution: "lodash@npm:4.18.1"
+  checksum: 10c0/757228fc68805c59789e82185135cf85f05d0b2d3d54631d680ca79ec21944ec8314d4533639a14b8bcfbd97a517e78960933041a5af17ecb693ec6eecb99a27
   languageName: node
   linkType: hard
 
