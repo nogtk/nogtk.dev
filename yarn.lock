@@ -3175,8 +3175,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.13.0
-  resolution: "firebase-tools@npm:15.13.0"
+  version: 15.14.0
+  resolution: "firebase-tools@npm:15.14.0"
   dependencies:
     "@apphosting/build": "npm:^0.1.7"
     "@apphosting/common": "npm:^0.0.8"
@@ -3256,7 +3256,7 @@ __metadata:
     zod-to-json-schema: "npm:^3.24.5"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/fe2d140d0a15132b404432a4a22443ca598c5d5b188db6a11819d4f7ad5407fb63ec801d2f2aa447b76c868e30cfbdc7c09710e53c735335fcf8a4cabff4a74c
+  checksum: 10c0/8dfbaa68ae4f605a66c6040f6cc240a681ac3b8790f670fc825204b541c00cb956b97dcf0f7171ef8239054d1364cb2c24dccae56180f6a25e171d09e106fa22
   languageName: node
   linkType: hard
 
