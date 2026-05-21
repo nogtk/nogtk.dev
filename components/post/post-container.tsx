@@ -17,7 +17,7 @@ const PostContainer = ({ post }: Props) => {
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />
           </Head>
-          <main className="order-2 xl:order-1">
+          <main className="order-2">
             {/* 1024px の時は max-w-xl がちょうどいいが、今はそれを無視しておく */}
             <div className="w-full xl:max-w-4xl mx-auto py-6 px-0 sm:px-6 lg:px-10">
                 <div className="rounded-lg bg-sol-base3 dark:bg-sol-base02 shadow-lg overflow-hidden">
@@ -37,7 +37,7 @@ const PostContainer = ({ post }: Props) => {
                 </div>
               </div>
           </main>
-          <aside className="w-full xl:w-1/3 order-1 xl:order-2 lg:mx-auto">
+          <aside className="w-full xl:w-1/3 order-1 lg:mx-auto">
             <div className="sticky top-12 xl:mt-12 mx-4 xl:mx-0 xl:mt-12">
               <TableOfContents />
             </div>
