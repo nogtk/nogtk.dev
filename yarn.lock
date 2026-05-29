@@ -3050,8 +3050,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.18.0
-  resolution: "firebase-tools@npm:15.18.0"
+  version: 15.19.0
+  resolution: "firebase-tools@npm:15.19.0"
   dependencies:
     "@apphosting/common": "npm:^0.0.8"
     "@electric-sql/pglite": "npm:^0.3.3"
@@ -3121,7 +3121,7 @@ __metadata:
     triple-beam: "npm:^1.3.0"
     universal-analytics: "npm:^0.5.3"
     update-notifier-cjs: "npm:^5.1.6"
-    uuid: "npm:^8.3.2"
+    uuid: "npm:^11.1.1"
     winston: "npm:^3.0.0"
     winston-transport: "npm:^4.4.0"
     ws: "npm:^7.5.10"
@@ -3130,7 +3130,7 @@ __metadata:
     zod-to-json-schema: "npm:^3.24.5"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/13d24df9666497b5cf2973881f8bc71507cdffd9a0968f68856bfaa40f3de24331920419fc539ff31f4f5e0c809d4ee439ced5e4a5b330c901278e2c617fc855
+  checksum: 10c0/db01a5d880b935145e542f8c32da88c4e1b288291b6bce65aaa44fcbaf1c3a1ec1553f2529d69fb2b7d27681f638b307d96fe41866ec82e066aeea8a6dbdb61a
   languageName: node
   linkType: hard
 
@@ -7170,7 +7170,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^8.0.0, uuid@npm:^8.3.2":
+"uuid@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "uuid@npm:11.1.1"
+  bin:
+    uuid: dist/esm/bin/uuid
+  checksum: 10c0/9e3af58eba872ece5a5e76f4773a94fc78a0ef2c2444c38dbe6b42f41dadf76c01850fd783604f27986f6195e6286aef064d45987d401b2a33127b98ddf7c0c5
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.0.0":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
   bin:
