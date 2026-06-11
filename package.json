@@ -12,7 +12,7 @@
   "dependencies": {
     "gray-matter": "^4.0.3",
     "next": "^16.0.0",
-    "next-seo": "^6.6.0",
+    "next-seo": "^7.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tocbot": "^4.30.0",
