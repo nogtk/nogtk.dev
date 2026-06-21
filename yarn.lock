@@ -2307,16 +2307,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deep-equal-in-any-order@npm:^2.0.6":
-  version: 2.1.0
-  resolution: "deep-equal-in-any-order@npm:2.1.0"
-  dependencies:
-    lodash.mapvalues: "npm:^4.6.0"
-    sort-any: "npm:^2.0.0"
-  checksum: 10c0/5b1b59937464a4a229f45c7042d0d21ea6a86fed0bb96d62d83ae13733950d69fa33cb9da33c1e64077a4a5b089a0189bfbf8b228d30a0bf5588481c423849d1
-  languageName: node
-  linkType: hard
-
 "deep-extend@npm:^0.6.0":
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
@@ -2989,13 +2979,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"filesize@npm:^6.1.0":
-  version: 6.4.0
-  resolution: "filesize@npm:6.4.0"
-  checksum: 10c0/1c317e59636d2079e64fcd38a69d415d5713a328496e0e5f1889b83e8adea8b47ceb9eb14726013b7cca02e76f5bd041eeab94edad8bed35d4ab1ecad55144d9
-  languageName: node
-  linkType: hard
-
 "fill-range@npm:^7.1.1":
   version: 7.1.1
   resolution: "fill-range@npm:7.1.1"
@@ -3050,8 +3033,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.20.0
-  resolution: "firebase-tools@npm:15.20.0"
+  version: 15.22.0
+  resolution: "firebase-tools@npm:15.22.0"
   dependencies:
     "@apphosting/common": "npm:^0.0.8"
     "@electric-sql/pglite": "npm:^0.3.3"
@@ -3076,11 +3059,9 @@ __metadata:
     cross-env: "npm:^7.0.3"
     cross-spawn: "npm:^7.0.5"
     csv-parse: "npm:^5.0.4"
-    deep-equal-in-any-order: "npm:^2.0.6"
     exegesis: "npm:^4.2.0"
     exegesis-express: "npm:^4.0.0"
     express: "npm:^4.16.4"
-    filesize: "npm:^6.1.0"
     form-data: "npm:^4.0.1"
     fs-extra: "npm:^10.1.0"
     fuzzy: "npm:^0.1.3"
@@ -3088,9 +3069,8 @@ __metadata:
     glob: "npm:^10.5.0"
     google-auth-library: "npm:^9.11.0"
     ignore: "npm:^7.0.4"
-    js-yaml: "npm:^3.14.2"
+    js-yaml: "npm:^4.2.0"
     jsonwebtoken: "npm:^9.0.2"
-    leven: "npm:^3.1.0"
     libsodium-wrappers: "npm:^0.7.10"
     lodash: "npm:^4.18.0"
     lsofi: "npm:^2.0.0"
@@ -3102,7 +3082,6 @@ __metadata:
     node-fetch: "npm:^2.6.7"
     open: "npm:^6.3.0"
     ora: "npm:^5.4.1"
-    p-limit: "npm:^3.0.1"
     pg: "npm:^8.11.3"
     pg-gateway: "npm:^0.3.0-beta.4"
     pglite-2: "npm:@electric-sql/pglite@0.2.17"
@@ -3121,7 +3100,6 @@ __metadata:
     triple-beam: "npm:^1.3.0"
     universal-analytics: "npm:^0.5.3"
     update-notifier-cjs: "npm:^5.1.6"
-    uuid: "npm:^11.1.1"
     winston: "npm:^3.0.0"
     winston-transport: "npm:^4.4.0"
     ws: "npm:^7.5.10"
@@ -3130,7 +3108,7 @@ __metadata:
     zod-to-json-schema: "npm:^3.24.5"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/8715f651ae08552bc0c6b278b02fe1057110319c3bd0665a64cdfca696e7d98e273a79a4d1221983d04e347dcc979a9aefaca70e19e975ba6168f2798af2ac23
+  checksum: 10c0/a1b35d2bfdaaee5a47310ecb90131feb611de1c5b1a53225e5c38661ec6b0cc76c01d17e7645dda2a4448d45098f3cb93a60a9848111f85bd358eb3aef73591e
   languageName: node
   linkType: hard
 
@@ -4055,7 +4033,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^3.13.1, js-yaml@npm:^3.14.2":
+"js-yaml@npm:^3.13.1":
   version: 3.14.2
   resolution: "js-yaml@npm:3.14.2"
   dependencies:
@@ -4075,6 +4053,17 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: 10c0/561c7d7088c40a9bb53cc75becbfb1df6ae49b34b5e6e5a81744b14ae8667ec564ad2527709d1a6e7d5e5fa6d483aa0f373a50ad98d42fde368ec4a190d4fae7
+  languageName: node
+  linkType: hard
+
+"js-yaml@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "js-yaml@npm:4.2.0"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    js-yaml: bin/js-yaml.js
+  checksum: 10c0/1916456c118746603b067d74bbcbb0445d9a1d5e474ad4ae775e7b20525bed902e01d9d97dd0c81fcd8d4f596162309d0eb057f4aa38f3e9647f14075e9dea45
   languageName: node
   linkType: hard
 
@@ -4192,13 +4181,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leven@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "leven@npm:3.1.0"
-  checksum: 10c0/cd778ba3fbab0f4d0500b7e87d1f6e1f041507c56fdcd47e8256a3012c98aaee371d4c15e0a76e0386107af2d42e2b7466160a2d80688aaa03e66e49949f42df
-  languageName: node
-  linkType: hard
-
 "libsodium-wrappers@npm:^0.7.10":
   version: 0.7.16
   resolution: "libsodium-wrappers@npm:0.7.16"
@@ -4303,13 +4285,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.mapvalues@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "lodash.mapvalues@npm:4.6.0"
-  checksum: 10c0/a976bfc3923d4d8d2034e049ec4700e3aaf141a6143c973d06be3b2c87697923cd0158ee770484ad1af52dfed93ae90d2b76268413db95a42a2f46d7e1754828
-  languageName: node
-  linkType: hard
-
 "lodash.once@npm:^4.0.0":
   version: 4.1.1
   resolution: "lodash.once@npm:4.1.1"
@@ -4324,7 +4299,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.21":
+"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
@@ -5175,15 +5150,6 @@ __metadata:
   version: 3.0.0
   resolution: "p-defer@npm:3.0.0"
   checksum: 10c0/848eb9821785b9a203def23618217ddbfa5cd909574ad0d66aae61a1981c4dcfa084804d6f97abe027bd004643471ddcdc823aa8df60198f791a9bd985e01bee
-  languageName: node
-  linkType: hard
-
-"p-limit@npm:^3.0.1":
-  version: 3.1.0
-  resolution: "p-limit@npm:3.1.0"
-  dependencies:
-    yocto-queue: "npm:^0.1.0"
-  checksum: 10c0/9db675949dbdc9c3763c89e748d0ef8bdad0afbb24d49ceaf4c46c02c77d30db4e0652ed36d0a0a7a95154335fab810d95c86153105bb73b3a90448e2bb14e1a
   languageName: node
   linkType: hard
 
@@ -6459,15 +6425,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sort-any@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "sort-any@npm:2.0.0"
-  dependencies:
-    lodash: "npm:^4.17.21"
-  checksum: 10c0/7ddedfae0de4c18fd9b209c7b6de99ec79a113cdb4e6a8b76608e1cc02dd5b0e665d2ff9f605be73e2b53426371473a2b5df59b671ac85b4320198b8af41c15d
-  languageName: node
-  linkType: hard
-
 "source-map-js@npm:^1.0.2, source-map-js@npm:^1.2.1":
   version: 1.2.1
   resolution: "source-map-js@npm:1.2.1"
@@ -7170,15 +7127,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^11.1.1":
-  version: 11.1.1
-  resolution: "uuid@npm:11.1.1"
-  bin:
-    uuid: dist/esm/bin/uuid
-  checksum: 10c0/9e3af58eba872ece5a5e76f4773a94fc78a0ef2c2444c38dbe6b42f41dadf76c01850fd783604f27986f6195e6286aef064d45987d401b2a33127b98ddf7c0c5
-  languageName: node
-  linkType: hard
-
 "uuid@npm:^8.0.0":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
@@ -7489,13 +7437,6 @@ __metadata:
     y18n: "npm:^5.0.5"
     yargs-parser: "npm:^21.1.1"
   checksum: 10c0/ccd7e723e61ad5965fffbb791366db689572b80cca80e0f96aad968dfff4156cd7cd1ad18607afe1046d8241e6fb2d6c08bf7fa7bfb5eaec818735d8feac8f05
-  languageName: node
-  linkType: hard
-
-"yocto-queue@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "yocto-queue@npm:0.1.0"
-  checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
   languageName: node
   linkType: hard
 
