@@ -6,6 +6,7 @@
     "build:static": "npm run generate-og && npm run generate-sitemap && next build",
     "start": "next start",
     "typecheck": "tsc",
+    "test:article-draft": "node --test scripts/create-article-draft.test.js",
     "generate-og": "node scripts/generate-og-images.js",
     "generate-sitemap": "node scripts/generate-sitemap.js"
   },
