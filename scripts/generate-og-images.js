@@ -1,135 +1,224 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const sharp = require('sharp');
+const React = require('react');
+const satori = require('satori').default;
+const { Resvg } = require('@resvg/resvg-js');
 
-// 技術カラーマッピング
-const getTechColor = (technology) => {
-  const techColors = {
-    django: '#092E20',
-    python: '#3776AB',
-    docker: '#2496ED',
-    kotlin: '#7F52FF',
-    rust: '#000000',
-    git: '#F05032',
-    javascript: '#F7DF1E',
-    typescript: '#007ACC',
-    react: '#61DAFB',
-    nextjs: '#000000',
-    aws: '#FF9900',
-    default: '#4A5568'
-  };
-  return techColors[technology?.toLowerCase()] || techColors.default;
+const WIDTH = 1200;
+const HEIGHT = 630;
+const FONT_FAMILY = 'Noto Sans JP';
+const COLORS = {
+  base03: '#002b36',
+  base02: '#073642',
+  base01: '#586e75',
+  base00: '#657b83',
+  base1: '#93a1a1',
+  base2: '#eee8d5',
+  base3: '#fdf6e3',
+  blue: '#268bd2',
+  cyan: '#2aa198',
+  yellow: '#b58900',
 };
 
-// 技術名を推測する関数
-const inferTechFromTitle = (title) => {
-  const titleLower = title.toLowerCase();
-  if (titleLower.includes('django')) return 'django';
-  if (titleLower.includes('docker')) return 'docker';
-  if (titleLower.includes('kotlin')) return 'kotlin';
-  if (titleLower.includes('rust')) return 'rust';
-  if (titleLower.includes('python')) return 'python';
-  if (titleLower.includes('s3') || titleLower.includes('aws')) return 'aws';
-  return 'tech';
+const loadFont = (fileName) => {
+  return fs.readFileSync(path.join(__dirname, 'fonts', fileName));
 };
 
-// テキストを複数行に分割する関数
-const splitTextIntoLines = (text, maxCharsPerLine = 20) => {
-  const words = text.split(' ');
+const fonts = [
+  {
+    name: FONT_FAMILY,
+    data: loadFont('NotoSansJP-Regular.otf'),
+    weight: 400,
+    style: 'normal',
+  },
+  {
+    name: FONT_FAMILY,
+    data: loadFont('NotoSansJP-Bold.otf'),
+    weight: 700,
+    style: 'normal',
+  },
+];
+
+const h = React.createElement;
+
+const getCharWidth = (char) => {
+  if (/[\s]/.test(char)) return 0.35;
+  if (/[\x00-\x7F]/.test(char)) return 0.58;
+  return 1;
+};
+
+const getTokenWidth = (token) => {
+  return [...token].reduce((width, char) => width + getCharWidth(char), 0);
+};
+
+// 日本語タイトルをOGPの横幅に収めるため、おおよその字幅で折り返す。
+const splitTextIntoLines = (text, maxWidth = 16, maxLines = 3) => {
+  const normalized = String(text).replace(/\s+/g, ' ').trim();
+  const tokens = normalized.match(/[A-Za-z0-9_:+#./-]+|\s+|./gu) || [];
   const lines = [];
   let currentLine = '';
-  
-  for (const word of words) {
-    if ((currentLine + word).length <= maxCharsPerLine) {
-      currentLine += (currentLine ? ' ' : '') + word;
-    } else {
-      if (currentLine) {
-        lines.push(currentLine);
-        currentLine = word;
-      } else {
-        // 単語が長すぎる場合は強制的に分割
-        lines.push(word);
-      }
+  let currentWidth = 0;
+
+  for (const token of tokens) {
+    const tokenWidth = getTokenWidth(token);
+    if (currentLine && currentWidth + tokenWidth > maxWidth) {
+      lines.push(currentLine.trim());
+      currentLine = token.trimStart();
+      currentWidth = getTokenWidth(currentLine);
+      if (lines.length === maxLines) break;
+      continue;
     }
+
+    currentLine += token;
+    currentWidth += tokenWidth;
   }
-  
-  if (currentLine) {
-    lines.push(currentLine);
+
+  if (currentLine && lines.length < maxLines) {
+    lines.push(currentLine.trim());
   }
-  
+
+  const renderedText = lines.join('');
+  if (renderedText.length < normalized.length && lines.length > 0) {
+    lines[lines.length - 1] = `${lines[lines.length - 1].replace(/[。、,.，．\s]+$/, '')}...`;
+  }
+
   return lines;
 };
 
-const escapeXml = (text) => {
-  return String(text)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
+const getTitleFontSize = (lineCount) => {
+  if (lineCount >= 3) return 46;
+  if (lineCount === 2) return 56;
+  return 64;
 };
 
-// SVG でOG画像を生成
-const generateOGImageSVG = (title, tech) => {
-  const width = 1200;
-  const height = 630;
-  const techColor = getTechColor(tech);
-  
-  // タイトルの行分割とフォントサイズの調整
-  const titleLines = splitTextIntoLines(title, 25);
-  const maxLines = 3;
-  const displayLines = titleLines.slice(0, maxLines);
-  
-  // 行数に応じてフォントサイズを調整
-  let fontSize = 48;
-  if (displayLines.length >= 3) {
-    fontSize = 36;
-  } else if (displayLines.length >= 2) {
-    fontSize = 42;
-  }
-  
-  const lineHeight = fontSize * 1.2;
-  const totalTextHeight = displayLines.length * lineHeight;
-  const startY = 300 - (totalTextHeight / 2) + (lineHeight / 2);
-  
-  // タイトルのSVGテキスト要素を生成
-  const titleSVG = displayLines.map((line, index) => {
-    const y = startY + (index * lineHeight);
-    // 最後の行で切り詰められた場合は "..." を追加
-    const displayText = (index === maxLines - 1 && titleLines.length > maxLines) 
-      ? line + '...' 
-      : line;
-    return `<text x="${width/2}" y="${y}" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold">${escapeXml(displayText)}</text>`;
-  }).join('\n  ');
-  
-  return `
-<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:${techColor}20;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:${techColor}10;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- 背景 -->
-  <rect width="100%" height="100%" fill="#f7fafc"/>
-  <rect width="100%" height="100%" fill="url(#bg)"/>
-  
-  <!-- 装飾円 -->
-  <circle cx="${width - 70}" cy="70" r="50" fill="${techColor}30"/>
-  <circle cx="70" cy="${height - 70}" r="30" fill="${techColor}20"/>
-  
-  <!-- 技術タグ -->
-  <rect x="${width/2 - 100}" y="180" width="200" height="40" rx="20" fill="${techColor}"/>
-  <text x="${width/2}" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">${escapeXml(tech.toUpperCase())}</text>
-  
-  <!-- タイトル -->
-  ${titleSVG}
-  
-  <!-- サイト名 -->
-  <text x="${width/2}" y="450" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="28">nogtk.dev</text>
-</svg>`;
+const generateOGImageSVG = async (title) => {
+  const titleLines = splitTextIntoLines(title);
+  const titleFontSize = getTitleFontSize(titleLines.length);
+
+  return satori(
+    h(
+      'div',
+      {
+        style: {
+          width: WIDTH,
+          height: HEIGHT,
+          display: 'flex',
+          position: 'relative',
+          backgroundColor: COLORS.base3,
+          color: COLORS.base02,
+          fontFamily: FONT_FAMILY,
+          padding: '68px 78px',
+          overflow: 'hidden',
+        },
+      },
+      h('div', {
+        style: {
+          position: 'absolute',
+          left: 48,
+          top: 48,
+          right: 48,
+          bottom: 48,
+          border: `3px solid ${COLORS.base2}`,
+        },
+      }),
+      h('div', {
+          style: {
+            position: 'absolute',
+            left: 78,
+            top: 150,
+            width: 8,
+            height: 330,
+            backgroundColor: COLORS.blue,
+        },
+      }),
+      h('div', {
+          style: {
+            position: 'absolute',
+            left: 102,
+            top: 150,
+            width: 8,
+            height: 330,
+            backgroundColor: COLORS.cyan,
+          opacity: 0.5,
+        },
+      }),
+      h(
+        'div',
+        {
+          style: {
+            position: 'absolute',
+            right: 78,
+            top: 68,
+            display: 'flex',
+            fontSize: 78,
+            lineHeight: 1,
+            fontWeight: 700,
+            color: COLORS.base02,
+          },
+        },
+        'nogtk.dev',
+      ),
+      h(
+        'div',
+        {
+          style: {
+            position: 'absolute',
+            left: 150,
+            top: 0,
+            width: 900,
+            height: HEIGHT,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+            fontSize: titleFontSize,
+            lineHeight: 1.18,
+            fontWeight: 700,
+            color: COLORS.base02,
+            textAlign: 'center',
+          },
+        },
+        ...titleLines.map((line) => h('div', { style: { display: 'flex' }, key: line }, line)),
+      ),
+      h('div', {
+        style: {
+          position: 'absolute',
+          right: 78,
+          bottom: 72,
+          width: 210,
+          height: 10,
+          backgroundColor: COLORS.base2,
+        },
+      }),
+      h('div', {
+        style: {
+          position: 'absolute',
+          right: 78,
+          bottom: 92,
+          width: 126,
+          height: 10,
+          backgroundColor: COLORS.base2,
+        },
+      }),
+    ),
+    {
+      width: WIDTH,
+      height: HEIGHT,
+      fonts,
+    },
+  );
+};
+
+const renderSvgToPng = (svgContent) => {
+  const resvg = new Resvg(svgContent, {
+    fitTo: {
+      mode: 'width',
+      value: WIDTH,
+    },
+  });
+  return resvg.render().asPng();
 };
 
 // 記事のOG画像を生成
@@ -153,16 +242,12 @@ const generatePostOGImages = async () => {
     
     const slug = filename.replace(/\.md$/, '');
     const title = data.title || slug;
-    const tech = data.tech || inferTechFromTitle(title);
-    
-    console.log(`Generating OG image for: ${title} (tech: ${tech})`);
-    
-    const svgContent = generateOGImageSVG(title, tech);
+    console.log(`Generating OG image for: ${title}`);
+
+    const svgContent = await generateOGImageSVG(title);
     const pngPath = path.join(publicOGDirectory, `${slug}.png`);
-    await sharp(Buffer.from(svgContent))
-      .png()
-      .toFile(pngPath);
-    
+    fs.writeFileSync(pngPath, renderSvgToPng(svgContent));
+
     console.log(`✓ Generated: ${pngPath}`);
   }
 };
