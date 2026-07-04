@@ -1,0 +1,54 @@
+name: Create article draft PR
+
+on:
+  issues:
+    types:
+      - opened
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  create_article_draft:
+    if: >-
+      contains(github.event.issue.labels.*.name, 'article-draft') &&
+      (
+        github.event.issue.author_association == 'OWNER' ||
+        github.event.issue.author_association == 'MEMBER' ||
+        github.event.issue.author_association == 'COLLABORATOR'
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Create article markdown
+        id: draft
+        run: node scripts/create-article-draft.js
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Add article draft ${{ steps.draft.outputs.slug }}
+          branch: article-draft/${{ steps.draft.outputs.slug }}
+          delete-branch: true
+          title: Add article draft: ${{ steps.draft.outputs.title }}
+          body: |
+            Created from #${{ github.event.issue.number }}.
+
+            ## Generated file
+            - `${{ steps.draft.outputs.post_path }}`
+
+            Firebase Hosting will create a preview from this PR.
+          labels: article-draft
+
+      - name: Comment with pull request URL
+        if: steps.cpr.outputs.pull-request-url != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "Article draft PR created: ${{ steps.cpr.outputs.pull-request-url }}"
