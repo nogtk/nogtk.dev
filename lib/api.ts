@@ -17,7 +17,7 @@ const inferTechFromTitle = (title: string): string => {
 
 // 静的OG画像パスを生成
 const getStaticOGImagePath = (slug: string): string => {
-  return `/assets/og/${slug}.svg`
+  return `/assets/og/${slug}.png`
 }
 
 export function getPostSlugs() {

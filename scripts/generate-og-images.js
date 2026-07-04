@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const sharp = require('sharp');
 
 // 技術カラーマッピング
 const getTechColor = (technology) => {
@@ -60,6 +61,15 @@ const splitTextIntoLines = (text, maxCharsPerLine = 20) => {
   return lines;
 };
 
+const escapeXml = (text) => {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+};
+
 // SVG でOG画像を生成
 const generateOGImageSVG = (title, tech) => {
   const width = 1200;
@@ -90,7 +100,7 @@ const generateOGImageSVG = (title, tech) => {
     const displayText = (index === maxLines - 1 && titleLines.length > maxLines) 
       ? line + '...' 
       : line;
-    return `<text x="${width/2}" y="${y}" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold">${displayText}</text>`;
+    return `<text x="${width/2}" y="${y}" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold">${escapeXml(displayText)}</text>`;
   }).join('\n  ');
   
   return `
@@ -112,7 +122,7 @@ const generateOGImageSVG = (title, tech) => {
   
   <!-- 技術タグ -->
   <rect x="${width/2 - 100}" y="180" width="200" height="40" rx="20" fill="${techColor}"/>
-  <text x="${width/2}" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">${tech.toUpperCase()}</text>
+  <text x="${width/2}" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">${escapeXml(tech.toUpperCase())}</text>
   
   <!-- タイトル -->
   ${titleSVG}
@@ -123,7 +133,7 @@ const generateOGImageSVG = (title, tech) => {
 };
 
 // 記事のOG画像を生成
-const generatePostOGImages = () => {
+const generatePostOGImages = async () => {
   const postsDirectory = path.join(process.cwd(), '_posts');
   const publicOGDirectory = path.join(process.cwd(), 'public', 'assets', 'og');
   
@@ -134,8 +144,8 @@ const generatePostOGImages = () => {
   
   const filenames = fs.readdirSync(postsDirectory);
   
-  filenames.forEach((filename) => {
-    if (!filename.endsWith('.md')) return;
+  for (const filename of filenames) {
+    if (!filename.endsWith('.md')) continue;
     
     const fullPath = path.join(postsDirectory, filename);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -148,18 +158,26 @@ const generatePostOGImages = () => {
     console.log(`Generating OG image for: ${title} (tech: ${tech})`);
     
     const svgContent = generateOGImageSVG(title, tech);
-    const svgPath = path.join(publicOGDirectory, `${slug}.svg`);
-    fs.writeFileSync(svgPath, svgContent);
+    const pngPath = path.join(publicOGDirectory, `${slug}.png`);
+    await sharp(Buffer.from(svgContent))
+      .png()
+      .toFile(pngPath);
     
-    console.log(`✓ Generated: ${svgPath}`);
-  });
+    console.log(`✓ Generated: ${pngPath}`);
+  }
 };
 
 // スクリプト実行
 if (require.main === module) {
   console.log('🎨 Generating OG images...');
-  generatePostOGImages();
-  console.log('✅ OG images generation completed!');
+  generatePostOGImages()
+    .then(() => {
+      console.log('✅ OG images generation completed!');
+    })
+    .catch((error) => {
+      console.error(error);
+      process.exit(1);
+    });
 }
 
 module.exports = { generatePostOGImages, generateOGImageSVG };
