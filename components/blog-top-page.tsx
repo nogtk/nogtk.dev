@@ -12,10 +12,18 @@ export default function BlogTopPage({ posts }: Props) {
   return (
     <div className="bg-sol-base2 dark:bg-sol-base03 text-sol-base01 dark:text-sol-base1">
       <BlogTitle />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <section>
-          <h2 className="text-3xl font-bold text-sol-base02 dark:text-sol-base2 mb-8">最新記事</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mb-12">
+            <p className="text-5xl font-bold leading-none text-sol-base02 dark:text-sol-base2 sm:text-6xl">
+              nogtk.dev
+            </p>
+            <p className="mt-4 text-lg text-sol-base00 dark:text-sol-base0">
+              技術のメモと、日々の記録
+            </p>
+          </div>
+          <h2 className="mb-5 text-2xl font-bold text-sol-base02 dark:text-sol-base2">最新記事</h2>
+          <div>
             {recentPosts.map((post) => (
               <PostPreview
                 key={post.slug}
@@ -23,11 +31,9 @@ export default function BlogTopPage({ posts }: Props) {
                 date={post.date}
                 slug={post.slug}
                 excerpt={post.excerpt}
-                coverImage={post.coverImage}
               />
             ))}
           </div>
-
         </section>
       </main>
     </div>
