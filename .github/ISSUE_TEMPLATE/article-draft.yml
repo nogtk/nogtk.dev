@@ -1,0 +1,56 @@
+name: Article draft
+description: Create a blog article draft from a mobile-friendly form.
+title: "[Article Draft]: "
+labels: ["article-draft"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Blog article title.
+      placeholder: Git worktree 入門
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: Optional. Use lowercase letters, numbers, and hyphens. If empty, it will be generated from the title.
+      placeholder: git-worktree
+    validations:
+      required: false
+  - type: input
+    id: excerpt
+    attributes:
+      label: Excerpt
+      description: Short description shown in article lists and metadata.
+      placeholder: Git worktree の基本的な使い方メモ
+    validations:
+      required: true
+  - type: input
+    id: tech
+    attributes:
+      label: Tech
+      description: Optional technology tag used by the article.
+      placeholder: git
+    validations:
+      required: false
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: Optional. Use YYYY-MM-DD. If empty, GitHub Actions uses today's date.
+      placeholder: "2026-07-04"
+    validations:
+      required: false
+  - type: textarea
+    id: body
+    attributes:
+      label: Body
+      description: Article body in Markdown.
+      placeholder: |
+        ## はじめに
+
+        ここに本文を書く。
+    validations:
+      required: true
