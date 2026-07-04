@@ -21,6 +21,7 @@ type Props = {
 export default function Post({ post }: Props) {
   const router = useRouter();
   const title = post.title;
+  const ogImageUrl = `https://nogtk.dev/assets/og/${post.slug}.png`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -45,10 +46,24 @@ export default function Post({ post }: Props) {
                 },
                 images: [
                   {
-                    url: `https://nogtk.dev/assets/og/${post.slug}.svg`,
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    type: "image/png",
+                    alt: title,
                   },
                 ],
               }}
+              additionalMetaTags={[
+                {
+                  name: "twitter:image",
+                  content: ogImageUrl,
+                },
+                {
+                  name: "twitter:image:alt",
+                  content: title,
+                },
+              ]}
             />
             <PostContainer post={post} />
           </>
@@ -67,6 +82,7 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
     "title",
+    "excerpt",
     "date",
     "slug",
     "content",

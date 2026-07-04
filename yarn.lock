@@ -6038,6 +6038,7 @@ __metadata:
     postcss: "npm:^8.4.49"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    sharp: "npm:^0.34.5"
     tailwindcss: "npm:^3.4.19"
     tocbot: "npm:^4.30.0"
     typescript: "npm:^5.7.2"
