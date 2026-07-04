@@ -15,7 +15,6 @@
     "next-seo": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tocbot": "^4.30.0",
     "typescript": "^5.7.2",
     "zenn-content-css": "0.5.1",
     "zenn-embed-elements": "0.5.1",
