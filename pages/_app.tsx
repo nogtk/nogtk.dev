@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo
         titleTemplate = '%s | nogtk.dev'
         defaultTitle = 'nogtk.dev'
-        description = "Tech insights, with a sprinkle of life's adventures"
+        description = "技術のメモと、日々の記録"
         twitter = {{
           cardType: 'summary_large_image',
           site: 'nogtk.dev',
@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           type: 'website',
           url: 'https://nogtk.dev',
           title: 'nogtk.dev',
-          description: "Tech insights, with a sprinkle of life's adventures",
+          description: "技術のメモと、日々の記録",
           locale: 'ja_JP',
           siteName: 'nogtk.dev',
           images: [
