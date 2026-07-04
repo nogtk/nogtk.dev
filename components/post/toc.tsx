@@ -1,27 +1,55 @@
-"use client";
-
 import React from "react";
-import { useEffect } from "react";
-import tocbot from "tocbot";
 
-export const TableOfContents: React.FC = () => {
-  useEffect(() => {
-    tocbot.init({
-      tocSelector: ".toc",
-      contentSelector: ".markdown-body",
-      headingSelector: "h2, h3, h4",
-      scrollSmooth: true,
-    });
+export type TocItem = {
+  id: string;
+  text: string;
+  level: number;
+};
 
-    return () => tocbot.destroy();
-  }, []);
+type Props = {
+  items: TocItem[];
+  compact?: boolean;
+};
+
+const TocList = ({ items }: { items: TocItem[] }) => {
+  return (
+    <ol className="space-y-2">
+      {items.map((item) => (
+        <li key={item.id} className={item.level >= 3 ? "pl-4" : undefined}>
+          <a
+            href={`#${item.id}`}
+            className="block border-l-2 border-transparent pl-3 text-sm leading-relaxed text-sol-base00 transition-colors hover:border-sol-blue hover:text-sol-blue dark:text-sol-base0"
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
+    </ol>
+  );
+};
+
+export const TableOfContents: React.FC<Props> = ({ items, compact = false }) => {
+  if (items.length === 0) {
+    return null;
+  }
+
+  if (compact) {
+    return (
+      <details className="my-8 border-y border-sol-base2 py-4 dark:border-sol-base02">
+        <summary className="cursor-pointer text-base font-bold text-sol-base02 dark:text-sol-base2">
+          目次
+        </summary>
+        <nav className="mt-4" aria-label="目次">
+          <TocList items={items} />
+        </nav>
+      </details>
+    );
+  }
 
   return (
-    <div className="rounded-lg bg-sol-base3 dark:bg-sol-base03 shadow-lg overflow-hidden border border-sol-base2 dark:border-sol-base02">
-      <div className="toc-container p-4 sm:p-6">
-        <div className="text-center text-xl font-semibold mb-4 dark:text-sol-base1">目次</div>
-        <div className="toc" />
-      </div>
-    </div>
+    <nav className="border-l border-sol-base2 py-1 pl-4 dark:border-sol-base02" aria-label="目次">
+      <div className="mb-3 text-sm font-bold text-sol-base02 dark:text-sol-base2">目次</div>
+      <TocList items={items} />
+    </nav>
   );
 };

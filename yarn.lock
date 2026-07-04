@@ -6283,7 +6283,6 @@ __metadata:
     react-dom: "npm:^19.0.0"
     satori: "npm:^0.26.0"
     tailwindcss: "npm:^3.4.19"
-    tocbot: "npm:^4.30.0"
     typescript: "npm:^5.7.2"
     zenn-content-css: "npm:0.5.1"
     zenn-embed-elements: "npm:0.5.1"
@@ -7134,13 +7133,6 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10c0/487988b0a19c654ff3e1961b87f471702e708fa8a8dd02a298ef16da7206692e8552a0250e8b3e8759270f62e9d8314616f6da274734d3b558b1fc7b7724e892
-  languageName: node
-  linkType: hard
-
-"tocbot@npm:^4.30.0":
-  version: 4.36.8
-  resolution: "tocbot@npm:4.36.8"
-  checksum: 10c0/c8d75edaa32bbb074cb3e3f4e35d2b6bb09a8be47aa4f335e2152634789ff59080867e45cb9171b6dfab6c0a5daedfc7e5b709e81d2bf1d06b6f22ab1f302fde
   languageName: node
   linkType: hard
 

@@ -304,48 +304,6 @@ body {
   }
 }
 
-.toc li {
-    list-style-type: none;
-    margin-bottom: 4px;
-    margin-top: 4px;
-    padding-left: 16px;
-    position: relative;
-}
-
-.toc li::before {
-    content: ''; /* 空の内容を指定 */
-    position: absolute;
-    left: 0;
-    top: 12px;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    border: 2px solid #268bd2;
-    border-radius: 50%; /* 丸形にする */
-    background-color: transparent;
-}
-
-.toc a {
-text-decoration: none;
-color: #657b83;
-transition: color 0.3s ease;
-opacity: 0.6;
-}
-
-.toc a:hover {
-opacity: 1;
-}
-
-.toc a.is-active-link {
-font-weight: bold;
-opacity: 1;
-}
-
-.toc li.is-active-li::before {
-    background-color: #268bd2; /* Solarized blue */
-    border: none; /* 枠線を削除 */
-}
-
 /* ── Dark theme overrides ── */
 [data-theme="dark"] body {
   background-color: #002b36;
@@ -548,13 +506,4 @@ opacity: 1;
 /* Dark: iframe blend mode - multiply は暗背景では不要 */
 [data-theme="dark"] .znc iframe {
   mix-blend-mode: normal;
-}
-
-/* Dark: TOC */
-[data-theme="dark"] .toc a {
-  color: #839496;
-}
-
-[data-theme="dark"] .toc li::before {
-  border-color: #268bd2;
 }
