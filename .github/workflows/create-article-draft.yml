@@ -74,7 +74,7 @@ jobs:
           commit-message: Add article draft ${{ steps.draft.outputs.slug }}
           branch: article-draft/${{ steps.draft.outputs.slug }}
           delete-branch: true
-          title: Add article draft: ${{ steps.draft.outputs.title }}
+          title: "Add article draft: ${{ steps.draft.outputs.title }}"
           body: |
             Created from #${{ steps.source.outputs.issue_number }}.
 
