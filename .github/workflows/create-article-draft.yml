@@ -4,6 +4,14 @@ on:
   issues:
     types:
       - opened
+      - edited
+      - labeled
+  workflow_dispatch:
+    inputs:
+      issue-number:
+        description: Issue number to convert into an article draft PR.
+        required: true
+        type: number
 
 permissions:
   contents: write
@@ -13,20 +21,50 @@ permissions:
 jobs:
   create_article_draft:
     if: >-
-      contains(github.event.issue.labels.*.name, 'article-draft') &&
+      github.event_name == 'workflow_dispatch' ||
       (
-        github.event.issue.author_association == 'OWNER' ||
-        github.event.issue.author_association == 'MEMBER' ||
-        github.event.issue.author_association == 'COLLABORATOR'
+        (
+          github.event.issue.author_association == 'OWNER' ||
+          github.event.issue.author_association == 'MEMBER' ||
+          github.event.issue.author_association == 'COLLABORATOR'
+        ) &&
+        (
+          contains(github.event.issue.labels.*.name, 'article-draft') ||
+          (
+            contains(github.event.issue.body, '### Title') &&
+            contains(github.event.issue.body, '### Excerpt') &&
+            contains(github.event.issue.body, '### Body')
+          )
+        )
       )
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
+      - name: Resolve source issue
+        id: source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            issue_number="${{ inputs.issue-number }}"
+            gh issue view "$issue_number" --json body --jq '{ issue: { body: .body } }' > "$RUNNER_TEMP/article-issue-event.json"
+            echo "ARTICLE_ISSUE_EVENT_PATH=$RUNNER_TEMP/article-issue-event.json" >> "$GITHUB_ENV"
+          else
+            issue_number="${{ github.event.issue.number }}"
+          fi
+
+          echo "issue_number=$issue_number" >> "$GITHUB_OUTPUT"
+
       - name: Create article markdown
         id: draft
-        run: node scripts/create-article-draft.js
+        run: |
+          if [ -n "${ARTICLE_ISSUE_EVENT_PATH:-}" ]; then
+            GITHUB_EVENT_PATH="$ARTICLE_ISSUE_EVENT_PATH" node scripts/create-article-draft.js
+          else
+            node scripts/create-article-draft.js
+          fi
 
       - name: Create pull request
         id: cpr
@@ -36,9 +74,9 @@ jobs:
           commit-message: Add article draft ${{ steps.draft.outputs.slug }}
           branch: article-draft/${{ steps.draft.outputs.slug }}
           delete-branch: true
-          title: Add article draft: ${{ steps.draft.outputs.title }}
+          title: "Add article draft: ${{ steps.draft.outputs.title }}"
           body: |
-            Created from #${{ github.event.issue.number }}.
+            Created from #${{ steps.source.outputs.issue_number }}.
 
             ## Generated file
             - `${{ steps.draft.outputs.post_path }}`
@@ -51,4 +89,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body "Article draft PR created: ${{ steps.cpr.outputs.pull-request-url }}"
+          gh issue comment "${{ steps.source.outputs.issue_number }}" --body "Article draft PR created: ${{ steps.cpr.outputs.pull-request-url }}"
