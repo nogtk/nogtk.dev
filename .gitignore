@@ -44,3 +44,4 @@ next-env.d.ts
 
 # npm (project uses yarn)
 package-lock.json
+.playwright-mcp
