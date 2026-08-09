@@ -6,7 +6,7 @@ import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownHtml from "../../lib/markdownHtml";
 import type PostType from "../../interfaces/post";
 import BlogTitle from "../../components/blog-title";
-import { NextSeo } from "next-seo";
+import Head from "next/head";
 import type { TocItem } from "../../components/post/toc";
 import PostFallback from "../../components/post/post-fallback";
 import PostContainer from "../../components/post/post-container";
@@ -31,38 +31,23 @@ export default function Post({ post, tocItems }: Props) {
           <PostFallback>Loading…</PostFallback>
         ) : (
           <>
-            <NextSeo
-              title={title}
-              description={post.excerpt}
-              openGraph={{
-                title: title,
-                url: `https://nogtk.dev/posts/${post.slug}`,
-                type: "article",
-                article: {
-                  publishedTime: post.date,
-                  authors: ["https://twitter.com/_nogtk_"],
-                },
-                images: [
-                  {
-                    url: ogImageUrl,
-                    width: 1200,
-                    height: 630,
-                    type: "image/png",
-                    alt: title,
-                  },
-                ],
-              }}
-              additionalMetaTags={[
-                {
-                  name: "twitter:image",
-                  content: ogImageUrl,
-                },
-                {
-                  name: "twitter:image:alt",
-                  content: title,
-                },
-              ]}
-            />
+            <Head>
+              <title>{`${title} | nogtk.dev`}</title>
+              <meta key="description" name="description" content={post.excerpt} />
+              <meta key="og:title" property="og:title" content={title} />
+              <meta key="og:description" property="og:description" content={post.excerpt} />
+              <meta key="og:url" property="og:url" content={`https://nogtk.dev/posts/${post.slug}`} />
+              <meta key="og:type" property="og:type" content="article" />
+              <meta key="article:published_time" property="article:published_time" content={post.date} />
+              <meta key="article:author" property="article:author" content="https://twitter.com/_nogtk_" />
+              <meta key="og:image" property="og:image" content={ogImageUrl} />
+              <meta key="og:image:width" property="og:image:width" content="1200" />
+              <meta key="og:image:height" property="og:image:height" content="630" />
+              <meta key="og:image:type" property="og:image:type" content="image/png" />
+              <meta key="og:image:alt" property="og:image:alt" content={title} />
+              <meta key="twitter:image" name="twitter:image" content={ogImageUrl} />
+              <meta key="twitter:image:alt" name="twitter:image:alt" content={title} />
+            </Head>
             <PostContainer post={post} tocItems={tocItems} />
           </>
         )}
