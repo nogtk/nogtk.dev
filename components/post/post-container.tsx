@@ -13,7 +13,7 @@ type Props = {
 const PostContainer = ({ post, tocItems }: Props) => {
   return (
     <>
-      <article className="flex-grow mb-32 bg-sol-base2 dark:bg-sol-base03 min-h-screen">
+      <article className="grow mb-32 bg-sol-base2 dark:bg-sol-base03 min-h-screen">
         <div className="mx-auto grid w-full max-w-[1180px] grid-cols-1 gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[230px_minmax(0,760px)] lg:items-start lg:justify-center lg:gap-10 lg:px-8 xl:max-w-[1240px]">
           <Head>
             <Script src="https://embed.zenn.studio/js/listen-embed-event.js" />

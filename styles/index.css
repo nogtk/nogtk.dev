@@ -1,6 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --color-accent-1: #fafafa;
+  --color-accent-2: #eaeaea;
+  --color-accent-7: #333;
+  --color-success: #0070f3;
+  --color-cyan: #79ffe1;
+  --color-sol-base03: #002b36;
+  --color-sol-base3: #fdf6e3;
+  --color-sol-base2: #eee8d5;
+  --color-sol-base1: #93a1a1;
+  --color-sol-base0: #839496;
+  --color-sol-base00: #657b83;
+  --color-sol-base01: #586e75;
+  --color-sol-base02: #073642;
+  --color-sol-blue: #268bd2;
+  --color-sol-cyan: #2aa198;
+  --color-sol-green: #859900;
+  --color-sol-yellow: #b58900;
+  --color-sol-orange: #cb4b16;
+  --color-sol-red: #dc322f;
+  --color-sol-magenta: #d33682;
+
+  --tracking-tighter: -0.04em;
+
+  --leading-tight: 1.2;
+
+  --text-5xl: 2.5rem;
+  --text-6xl: 2.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6.25rem;
+
+  --shadow-sm: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 /* ── Solarized Light global base ── */
 body {

@@ -32,7 +32,7 @@ const BlogTitle = () => {
     <header className="bg-sol-base3 dark:bg-sol-base03 shadow-sm sticky top-0 z-50 border-b border-sol-base2 dark:border-sol-base02">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/" className="text-2xl font-bold text-sol-base02 dark:text-sol-base2 hover:text-sol-blue transition-colors">
               nogtk.dev
             </Link>
@@ -49,7 +49,7 @@ const BlogTitle = () => {
             </Link>
             <button
               onClick={toggleTheme}
-              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue transition-colors focus:outline-none"
+              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue transition-colors focus:outline-hidden"
               aria-label="テーマを切り替える"
               suppressHydrationWarning
             >
@@ -59,7 +59,7 @@ const BlogTitle = () => {
           <div className="md:hidden flex items-center space-x-3">
             <button
               onClick={toggleTheme}
-              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue focus:outline-none"
+              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue focus:outline-hidden"
               aria-label="テーマを切り替える"
               suppressHydrationWarning
             >
@@ -67,7 +67,7 @@ const BlogTitle = () => {
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue focus:outline-none"
+              className="text-sol-base00 dark:text-sol-base0 hover:text-sol-blue focus:outline-hidden"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
