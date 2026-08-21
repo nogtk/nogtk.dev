@@ -3479,8 +3479,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.28.0
-  resolution: "firebase-tools@npm:15.28.0"
+  version: 15.28.1
+  resolution: "firebase-tools@npm:15.28.1"
   dependencies:
     "@apphosting/common": "npm:^0.0.8"
     "@electric-sql/pglite": "npm:^0.3.3"
@@ -3554,7 +3554,7 @@ __metadata:
     zod: "npm:^4.0.0"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/85d260ecc4bb8df2773828cf9fc21c057c6a2c2e3420df8f8850bdcd773b0c5db32f89f5172dd98e62cea9be8a7cb24bf04c7f2574d1f5b1b4b09d0a1624b8b9
+  checksum: 10c0/d7eca5da2c986228b16199a1d4b1bb8b20b2d655db85b6a46323d2657d50bb98cee1d01c45db23b1272beadc195656d0bfb42fd07d5da66f7ceaf02f7998591c
   languageName: node
   linkType: hard
 
