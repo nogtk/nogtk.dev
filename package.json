@@ -16,7 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.7.2",
-    "zenn-content-css": "0.5.2",
+    "zenn-content-css": "0.5.3",
     "zenn-embed-elements": "0.5.2",
     "zenn-markdown-html": "0.5.2"
   },
