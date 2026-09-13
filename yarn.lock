@@ -6582,7 +6582,7 @@ __metadata:
     typescript: "npm:^5.7.2"
     zenn-content-css: "npm:0.5.4"
     zenn-embed-elements: "npm:0.5.4"
-    zenn-markdown-html: "npm:0.5.3"
+    zenn-markdown-html: "npm:0.5.4"
   languageName: unknown
   linkType: soft
 
@@ -8101,9 +8101,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zenn-markdown-html@npm:0.5.3":
-  version: 0.5.3
-  resolution: "zenn-markdown-html@npm:0.5.3"
+"zenn-markdown-html@npm:0.5.4":
+  version: 0.5.4
+  resolution: "zenn-markdown-html@npm:0.5.4"
   dependencies:
     cheerio: "npm:1.2.0"
     markdown-it: "npm:^14.1.0"
@@ -8115,7 +8115,7 @@ __metadata:
     markdown-it-task-lists: "npm:^2.1.1"
     sanitize-html: "npm:^2.17.0"
     shiki: "npm:^3.21.0"
-  checksum: 10c0/f705a9dec3b3d16c4bf9364ffb57823442e953ef0e9030255d78055918e4ffaae151784efbf53ecd18419a612539295e700b33227e41e902658e8f5f01f7bf8a
+  checksum: 10c0/192e4aaa9aa9a500f0ea3dd53020d1adf5d99ec3e32a8de899be3896319dd8dbb6fdc538a66a9ad716accb1afa8ce51959ff2545d42122195d4f8480e7b912e2
   languageName: node
   linkType: hard
 
