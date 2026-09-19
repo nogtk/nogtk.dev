@@ -17,7 +17,7 @@ LOLIPOP AI ゲートウェイを使う。
 
 APIキーを発行して適当にモデル一覧を読んでみる。
 ```sh
-curl "$AI_GATEWAY_BASE_URL/v1/models" -H "Authorization: Bearer $AI_GATEWAY_API_KEY" | jq .
+$ curl "$AI_GATEWAY_BASE_URL/v1/models" -H "Authorization: Bearer $AI_GATEWAY_API_KEY" | jq .
 ```
 
 モデルがあったので呼び出す。
@@ -33,8 +33,8 @@ curl "$AI_GATEWAY_BASE_URL/v1/models" -H "Authorization: Bearer $AI_GATEWAY_API_
 ```
 
 一旦、なんのこっちゃ分からないが呼び出してみる。
-```
-curl "$AI_GATEWAY_BASE_URL/v1/systemone" \
+```sh
+$ curl "$AI_GATEWAY_BASE_URL/v1/systemone" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -55,7 +55,7 @@ curl "$AI_GATEWAY_BASE_URL/v1/systemone" \
 ```
 
 返ってきた。
-```
+```json
 {
   "model": "typesafe/jev-latest",
   "answers": {
