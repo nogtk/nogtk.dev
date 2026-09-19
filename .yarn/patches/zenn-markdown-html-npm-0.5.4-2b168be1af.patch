@@ -1,0 +1,47 @@
+diff --git a/dist/index.js b/dist/index.js
+index 1009a1c392cf75c383c49a1a5ba343bbbdaca917..1570cdf41cf7e94e63ab9c86b10a9bcaab2368fe 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -988,16 +988,15 @@ import {
+ } from "shiki";
+ import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
+ var highlighterPromise = null;
+-var SHIKI_THEME = "github-dark";
+-var SHIKI_THEME_BG_COLOR = "#24292e";
+-var CODE_BLOCK_BG_COLOR = "#151e2c";
+-var SHIKI_THEME_COMMENT_COLOR = "#6a737d";
+-var COMMENT_COLOR = "#a0aab5";
++var SHIKI_THEMES = {
++  light: "github-light",
++  dark: "github-dark"
++};
+ var isBrowser = typeof window !== "undefined";
+ async function getHighlighter() {
+   if (!highlighterPromise) {
+     highlighterPromise = createHighlighter({
+-      themes: [SHIKI_THEME],
++      themes: Object.values(SHIKI_THEMES),
+       langs: [],
+       // ブラウザ環境では JavaScript エンジンを使用
+       // forgiving: true で変換できないパターンもベストエフォートで処理
+@@ -1111,11 +1110,17 @@ async function highlight(text, langName, options) {
+   }
+   return highlighter.codeToHtml(text, {
+     lang,
+-    theme: SHIKI_THEME,
++    themes: SHIKI_THEMES,
++    defaultColor: "light",
+     transformers,
+     colorReplacements: {
+-      [SHIKI_THEME_BG_COLOR]: CODE_BLOCK_BG_COLOR,
+-      [SHIKI_THEME_COMMENT_COLOR]: COMMENT_COLOR
++      "github-light": {
++        "#fff": "#eee8d5"
++      },
++      "github-dark": {
++        "#24292e": "#073642",
++        "#6a737d": "#93a1a1"
++      }
+     }
+   });
+ }
