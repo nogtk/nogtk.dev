@@ -184,6 +184,19 @@ body {
   background: #eee8d5 !important;
 }
 
+/* Zenn 0.5.x renders fenced code blocks with Shiki's github-dark theme.
+   Keep its dark surface so the inline syntax colors remain readable. */
+.znc pre.shiki,
+.znc pre.shiki code {
+  background: #073642 !important;
+  color: #eee8d5 !important;
+}
+
+.znc pre.shiki {
+  border-color: #586e75;
+  overflow-x: auto;
+}
+
 .znc .hljs-emphasis {
   font-style: italic;
 }
