@@ -3486,8 +3486,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^15.0.0":
-  version: 15.32.0
-  resolution: "firebase-tools@npm:15.32.0"
+  version: 15.32.1
+  resolution: "firebase-tools@npm:15.32.1"
   dependencies:
     "@apphosting/common": "npm:^0.0.8"
     "@electric-sql/pglite": "npm:^0.3.3"
@@ -3547,7 +3547,7 @@ __metadata:
     stream-chain: "npm:^4.2.5"
     stream-json: "npm:^3.6.0"
     superstatic: "npm:^10.0.0"
-    tar: "npm:^7.5.11"
+    tar: "npm:^7.5.21"
     tcp-port-used: "npm:^1.0.2"
     tmp: "npm:^0.2.3"
     triple-beam: "npm:^1.3.0"
@@ -3561,7 +3561,7 @@ __metadata:
     zod: "npm:^4.0.0"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 10c0/7dbccfd84292291c0e83875c6f1b5980a42466f540f06dd8fbb970c9e01beec404814f4bf043469a7d6a26aabac3b196f7ccf0bcbc16243db22b355594e04d28
+  checksum: 10c0/1e81caf6fb678ea83c13afb3b77df2d94979edfaf5a62e9efee0f0ba8e7f1a68fbcc0bfffa931d629cfd566e0227eee174e3728a97fe8ac08966bc69cbd83b52
   languageName: node
   linkType: hard
 
@@ -7314,19 +7314,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:^7.5.11":
-  version: 7.5.13
-  resolution: "tar@npm:7.5.13"
-  dependencies:
-    "@isaacs/fs-minipass": "npm:^4.0.0"
-    chownr: "npm:^3.0.0"
-    minipass: "npm:^7.1.2"
-    minizlib: "npm:^3.1.0"
-    yallist: "npm:^5.0.0"
-  checksum: 10c0/5c65b8084799bde7a791593a1c1a45d3d6ee98182e3700b24c247b7b8f8654df4191642abbdb07ff25043d45dcff35620827c3997b88ae6c12040f64bed5076b
-  languageName: node
-  linkType: hard
-
 "tar@npm:^7.5.2":
   version: 7.5.2
   resolution: "tar@npm:7.5.2"
@@ -7337,6 +7324,19 @@ __metadata:
     minizlib: "npm:^3.1.0"
     yallist: "npm:^5.0.0"
   checksum: 10c0/a7d8b801139b52f93a7e34830db0de54c5aa45487c7cb551f6f3d44a112c67f1cb8ffdae856b05fd4f17b1749911f1c26f1e3a23bbe0279e17fd96077f13f467
+  languageName: node
+  linkType: hard
+
+"tar@npm:^7.5.21":
+  version: 7.5.22
+  resolution: "tar@npm:7.5.22"
+  dependencies:
+    "@isaacs/fs-minipass": "npm:^4.0.0"
+    chownr: "npm:^3.0.0"
+    minipass: "npm:^7.1.2"
+    minizlib: "npm:^3.1.0"
+    yallist: "npm:^5.0.0"
+  checksum: 10c0/1311f6be85a8157ac4c9147bae43e13923d2a1aae15e4aa1bd5239e4e03d2cf53cfe103dde7f35832fbb4c938b042856bc8e9a0afd29abd05e2d1608788c4fea
   languageName: node
   linkType: hard
 
