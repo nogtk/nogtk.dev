@@ -1,4 +1,4 @@
-FROM node:26.13.0-alpine3.22
+FROM node:26.13.0-alpine
 
 ENV GROUPNAME=app
 ENV USERNAME=app
