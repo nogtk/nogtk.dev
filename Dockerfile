@@ -1,4 +1,4 @@
-FROM node:24.1.0-alpine3.20
+FROM node:26.13.0-alpine3.22
 
 ENV GROUPNAME=app
 ENV USERNAME=app
@@ -13,7 +13,7 @@ RUN apk add bash make g++ && \
 
 RUN apk add python3
 
-RUN corepack enable
+RUN npm install --global corepack && corepack enable
 
 USER $USER_GID:$USER_UID
 

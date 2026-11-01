@@ -11,8 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
       - name: Enable Corepack
-        run: corepack enable
+        run: npm install --global corepack && corepack enable
       - run: yarn install --immutable && yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
