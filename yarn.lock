@@ -6589,7 +6589,7 @@ __metadata:
     satori: "npm:^0.47.0"
     tailwindcss: "npm:^4.3.3"
     typescript: "npm:^5.7.2"
-    zenn-content-css: "npm:0.5.13"
+    zenn-content-css: "npm:0.5.14"
     zenn-embed-elements: "npm:0.5.8"
     zenn-markdown-html: "patch:zenn-markdown-html@npm%3A0.5.4#~/.yarn/patches/zenn-markdown-html-npm-0.5.4-2b168be1af.patch"
   languageName: unknown
@@ -8095,10 +8095,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zenn-content-css@npm:0.5.13":
-  version: 0.5.13
-  resolution: "zenn-content-css@npm:0.5.13"
-  checksum: 10c0/f32babd483a2abc5a2726d33be3981a799fbcfa6e0987cc1feab692596eba385e038037298e4e0a3e47026cf4e26b13055f2fdd6b4a6819dbf483994dc8211b4
+"zenn-content-css@npm:0.5.14":
+  version: 0.5.14
+  resolution: "zenn-content-css@npm:0.5.14"
+  checksum: 10c0/1f20fa2cebd65d48305603924f0f9ec106ab3f5e38908588afa861958b0d2a1543633bce423c5c60c00bdb78eff5e843c55d5429d599d41ccfba6a613127b0da
   languageName: node
   linkType: hard
 
